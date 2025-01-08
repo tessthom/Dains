@@ -1,47 +1,21 @@
-# Astro Starter Kit: Minimal
+# Dain's Place
 
-```sh
-npm create astro@latest -- --template minimal
-```
+A local bar and restaurant has been frustrated by an outdated, clunky SquareSpace site that hasn't been updated in years. I'm building a new, streamlined site using Astro with vanilla JS. 
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+All designs were created by me, using Figma. I am also acting as a copywriter and photographer to generate fresh content and better quality assets for the new build. 
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-## 🚀 Project Structure
+## Dependencies
 
-Inside of your Astro project, you'll see the following folders and files:
+Minimal or bust babyyyy
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
+| Tool                   | Reason                                           |
 | :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+| [Astro](https://docs.astro.build)             | Excellent SSG features + super flexible components                            |
+| [OpenProps](https://open-props.style/)             | Lightweight, powerful CSS variables      |
+| Vanilla JS           | Why add overhead when Astro supercharges interactivity          |
 
-## 👀 Want to learn more?
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Check out the live site
+
+[dainsplace.bar](https://dainsplace.bar)
