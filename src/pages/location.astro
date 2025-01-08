@@ -1,18 +1,9 @@
 ---
-import Navigation from '../components/Navigation.astro';
-import '../styles/global.css';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const pageTitle = 'Location';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Location</title>
-	</head>
-	<body>
-    <Navigation />
-		<h1>Hours & Location</h1>
-	</body>
-</html>
+<BaseLayout pageTitle={pageTitle}>
+	<h2>Come Get the Munchies!</h2>
+</BaseLayout>
