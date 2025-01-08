@@ -13,7 +13,7 @@ Minimal or bust babyyyy
 | :------------------------ | :----------------------------------------------- |
 | [Astro](https://docs.astro.build)             | Excellent SSG features + super flexible components                            |
 | [OpenProps](https://open-props.style/)             | Lightweight, powerful CSS variables      |
-| Vanilla JS           | Why add overhead when Astro supercharges interactivity          |
+| Vanilla JS           | Why add overhead when Astro supercharges what "static sites" can do?          |
 
 
 ## Check out the live site
