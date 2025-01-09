@@ -1,6 +1,45 @@
+:root {
+  --background: #fefaee;
+  --primary: #da2525; 
+  --secondary: #ffffff;
+}
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--primary);
+}
+
+main > * {
+  border: 1px solid rgb(3, 195, 28);
+}
+
+main {
+  line-height: 1.5;
+}
+
+img, iframe {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-inline-size: 100%;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
 
 /* Utility Classes */
 .uppercase {
   text-transform: uppercase;
+}
+
+.drop-border {
+  border: solid var(--primary) 3px 3px 10px;
 }

@@ -1,7 +1,12 @@
 ---
+const { showHomeLink } = Astro.props;
 ---
-<a href="/">Home</a>
-<a href="/about/">About</a>
-<a href="/location/">Location</a>
-<a href="/contact/">Contact</a>
-<a href="/menu/">Menu</a>
+<nav aria-label={showHomeLink ? 'Primary' : 'Secondary'}>
+  <ul>
+    {showHomeLink && <li><a href="/">Home</a></li>}
+    <li><a href="/about/">About</a></li>
+    <li><a href="/location/">Location</a></li>
+    <li><a href="/contact/">Contact</a></li>
+    <li><a href="/menu/">Menu</a></li>
+  </ul>
+</nav>

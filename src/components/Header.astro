@@ -1,8 +1,33 @@
 ---
 import Navigation from './Navigation.astro';
+import { Image } from 'astro:assets';
+import logo from '../assets/logo.png';
+
+const logoWidth = '';
 ---
+<style>
+  header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo-container {
+    min-width: 50px;
+  }
+
+  .logo {
+    width: 10vw;
+    height: auto;
+  }
+</style>
+
 <header>
-  <nav>
-    <Navigation />
-  </nav>
+  <div class="logo-container">
+    <a href="/">
+      <Image src={logo} alt="Dain's Place logo" class="logo" />
+    </a>
+  </div>
+  <Navigation showHomeLink={false} />
 </header>
