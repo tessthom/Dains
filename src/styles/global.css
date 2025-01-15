@@ -15,10 +15,6 @@ body {
   color: var(--primary);
 }
 
-main > * {
-  border: 1px solid rgb(3, 195, 28);
-}
-
 main {
   line-height: 1.5;
 }
@@ -35,11 +31,29 @@ a {
   cursor: pointer;
 }
 
+/* Fonts */
+.body-text {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.cursive {
+  font-family: 'Permanent Marker', cursive;
+}
+
 /* Utility Classes */
 .uppercase {
   text-transform: uppercase;
 }
 
+.box-white {
+  background-color: var(--secondary);
+}
+
+.bottom-border {
+  border-bottom: 3px solid var(--primary);
+}
+
 .drop-border {
-  border: solid var(--primary) 3px 3px 10px;
+  border: 3px solid var(--primary);
+  border-bottom: 10px solid var(--primary);
 }

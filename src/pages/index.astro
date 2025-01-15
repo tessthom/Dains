@@ -1,23 +1,90 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
+import { Image } from 'astro:assets';
+import dainsFullLogo from '../assets/logo-sm.png';
+
 const pageTitle = 'Home';
 ---
 <style>
+	section {
+		color: var(--secondary);
+	}
 	.hero {
 		background-image: linear-gradient(hsl(16, 76%, 66%, .12), hsl(16, 76%, 66%, .12)), url('../assets/burger-with-loaded-fries.jpg');
 		background-color: var(--background);
 		color: var(--secondary);
 	}
+	.buttons-collage {
+		background-image: url('../assets/buttons-close.jpg');
+		color: var(--secondary);
+	}
+	.about {
+		background-color: var(--primary);
+	}
+	.detail-logo {
+		border: 3px solid var(--secondary);
+		width: 80px;
+	}
+	.food-bg {
+		background-image: url('../assets/mozzarella-triangles-800.jpeg');
+	}
 </style>
 
 <BaseLayout pageTitle={pageTitle}>
-	<section class="hero">
+	<section class="bottom-border">
+		<div class="hero">
 			<h2 class="uppercase">Dain's Place</h2>
 			<address>
 				754 Ninth St<br />
 				Durham, NC<br />
 				919-416-8800
 			</address>
+		</div>
+
+		<div class="drop-border">
+			<a class="uppercase cursive" href="/menu/">See our menu</a>
+		</div>
 	</section>
+
+	<section>
+		<div class="buttons-collage">
+			<div class="hours-button">
+				<div class="uppercase">
+					<h3>We're open</h3>
+					<p>11am - 12am</p>
+					<p>Mon - Sun</p>
+					<p>*Kitchen 'til 10pm</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="about">
+		<div>
+			<Image class="detail-logo" src={dainsFullLogo} alt="Full detail Dain's Place logo in the style of stained glass with Old English lettering." />
+			<h3 class="uppercase cursive">A Durham Institution</h3>
+
+			<p class="body-text">Beloved by locals, students, Eagle's fans  and just about anybody with a penchant for potatoes, Dain's has been slinging its famous juicy burgers and toasty tater tots since 2013. Come sidle up to the bar and make a new friend, or bring your own. Blah blah and more text here. Lorem ipsum flipsum bipsum and a sea shells by the sea shore. Rich white Reese Witherspoon - try saying that 5 times fast!</p>
+
+			<a class="uppercase" href="/about/">About the bar</a>
+		</div>
+	</section>
+
+	<section>
+		<div class="food-bg">
+			<!-- TODO: Get better pic of mozz. -->
+			<svg width="44" height="59" viewBox="0 0 44 59" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M22 0L24.9868 25.4949L44 29.5L24.9868 33.5051L22 59L19.0132 33.5051L0 29.5L19.0132 25.4949L22 0Z" fill="#FEFCF9"/>
+			</svg>
+				
+			<svg width="77" height="91" viewBox="0 0 77 91" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M38.5 0L43.7269 39.3227L77 45.5L43.7269 51.6773L38.5 91L33.2731 51.6773L0 45.5L33.2731 39.3227L38.5 0Z" fill="#FEFCF9"/>
+			</svg>
+		</div>
+	</section>
+
+	<div class="banner-container">
+		<p class="uppercase">Fly Eagles Fly</p>
+	</div>
 </BaseLayout>

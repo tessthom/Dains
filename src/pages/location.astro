@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
 import { Image } from 'astro:assets';
 import dainsFromStreet from '../assets/barfront.jpg';
 
@@ -14,16 +15,23 @@ const pageTitle = 'Location';
 		aspect-ratio: 1 / 1;
 		object-fit: cover;
 	}
+
+	aside {
+		background-color: var(--primary);
+		color: var(--secondary);
+	}
 </style>
 
 <BaseLayout pageTitle={pageTitle}>
 	<article>
-		<h2>Come Get the Munchies!</h2>
-		<p>Dain's Place is located in the heart of town, at:</p>
-		<address>
-			754 Ninth Street<br />
-			Durham, NC 27705
-		</address>
+		<h2 class="uppercase">Come Get the Munchies!</h2>
+		<div class="box-white drop-border">
+			<p>Dain's Place is located in the heart of town, at:</p>
+			<address>
+				754 Ninth Street<br>
+				Durham, NC 27705
+			</address>
+		</div>
 	</article>
 
 	<div>
@@ -38,7 +46,7 @@ const pageTitle = 'Location';
 		<Image src={dainsFromStreet} alt="Front view of Dain's Place, a black brick building with a red awning and sunny patio." />
 	</div>
 
-	<section>
+	<section class="box-white drop-border">
 		<h3>We're open:</h3>
 		<p>Monday - Sunday</p>
 		<p>11am - 12am</p>
