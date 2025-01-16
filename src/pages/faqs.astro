@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const jurgensStreak = new Date().getFullYear() - 2007;
+const pageTitle = 'FAQs'
+---
+<style>
+	.hover-cursor {
+		cursor: pointer;
+		font-weight: bold;
+		font-style: italic;
+	}
+</style>
+
+<BaseLayout pageTitle={pageTitle}>
+  <h2>FAQs</h2>
+	<div class="accordion">
+		<details>
+			<summary>Do you take reservations?</summary>
+			Dain's Place is first come, first serve, and have a seat wherever you like. If you'd like to sit on the patio we'd love if you could pop in real quick to let us know, so we can make sure you're taken care of promptly.
+		</details>
+		<details>
+			<summary>Are y'all family-friendly?</summary>
+			Dain's welcomes folks of all ages while the kitchen's open. We've got a high chair, booster seat, and keep a bucket of chalk handy for sidewalk art on the patio.
+		</details>
+		<details>
+			<summary>Is the patio dog-friendly?</summary>
+			You bet! We love pups at Dain's and keep 3 bowls of fresh water out front for your four-legged friends. We just ask that you keep your pup on a leash, and of course only service animals are permitted inside.
+		</details>
+		<details>
+			<summary>Do you have a kids menu?</summary>
+			In the spirit of keeping things simple we don't have a separate kids menu, but we sure do have lots of kid-friendly options. Hot dogs, grilled cheeses, and nuggets o' chicken are especially popular. Ooh and Oreos & milk. Can't forget the Oreos & milk.
+		</details>
+		<details>
+			<summary>Will the game be on?</summary>
+			Dain's Place has 4 artfully placed HD bigscreen TVs and our staff will gladly accomodate game requests. Bonus points if you know what network you're looking for. *We're a Philly bar with a side of Purdue pride, so when the birds or Boilermakers are playing they get top billing. Speaking of college ball, we're a hoppin' spot for Duke games being down the road from campus and all. Come cheer with us!
+		</details>
+		<details>
+			<summary>Do you have any non-alcoholic beverage options, other than sodas and such?</summary>
+			You bet. Our drinks menu offers a growing array of genuinely delicious N/A selections, from ciders to beers (in a variety of styles) to spritzes, and even N/A spirits.
+		</details>
+		<details>
+			<summary>What's the story with your burger patties?</summary>
+			Our patties are hand-formed using 1/2 lb of fresh, <em>never-frozen</em>, 100% Black Angus beef. No frozen pucks for the fine people of Durham!
+		</details>
+		<details>
+			<summary>Is the hotdog all beef?</summary>
+			Yes indeed. We use the finest kosher, all-beef hot dogs. Seriously, they're really good hot dogs.
+		</details>
+		<details>
+			<summary>What if I'm a vegetarian?</summary>
+			Herbivores rejoice! Our menu features all kinds of vegetarian options. From Impossible burgers to house-made mozzarella triangles to grilled cheeses to perogies, we've got you covered. (The salad is kind of a banger too, TBH.)
+		</details>
+		<details>
+			<summary>What if I have a food allergy?</summary>
+			We do our best to accomodate all modification requests, but please note that trace cross-contamination from things like gluten and dairy is unavoidable because we just don't have the space to maintian a totally separate cook area. Please bear this in mind if your allergy is severe. We do <em>not</em> use peanut oil, and our kaiser buns are not baked with dairy.
+		</details>
+		<details>
+			<summary>Say more about the fryer oil...</summary>
+			We use 100% soybean oil. No peanuts to be found. What's even cooler - one of our <span class="hover-cursor" title="Regulars for all of our first 10 years, and then some. Comes with special perks!">Customers of the Decade&trade;</span> has been picking up and recycling our fryer oil into bio-diesel for his old school BMW for {jurgensStreak} years running! Shout out to Jurgen for wasting not.
+		</details>
+		<details>
+			<summary>Do you have gluten free buns?</summary>
+			We don't carry gluten free buns at this time, but we're happy to serve any sandwich bunless. It'll even come out on a fancy plate!
+		</details>
+		<!-- TODO: Confirm defibrillator. Old menu says it was the Dainer but the internet disagrees? -->
+		<details>
+			<summary>Were y'all really on Man v. Food???</summary>
+			Oh yeah. Richman enjoyed our Defibrillator burger, which is topped with bacon, sweet beef chili, cheddar cheese, coleslaw, and yes you're reading this right - a hotdog. Named one of <a href="https://www.mashed.com/1238720/the-best-burgers-ever-seen-on-man-v-food/" target="_blank">"The Best Burgers Ever Seen on Man V. Food"</a> by Mashed, the Defibrillator aint for the faint of heart, but boy is it delicious.
+		</details>
+		<details>
+			<summary>Can I have a private party at Dain's Place?</summary>
+			If you're interested in reserving part or all of the bar for a special event, please reach out via our <a href="/contact/">contact form</a>. 
+		</details>
+	</div>
+</BaseLayout>
