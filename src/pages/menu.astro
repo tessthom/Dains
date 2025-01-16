@@ -1,5 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+import { Image } from 'astro:assets';
+import burgerWithMenuInfo from '../assets/burger-map-1000.jpg';
+
 const pageTitle = 'Menu';
 ---
 
@@ -15,5 +19,11 @@ const pageTitle = 'Menu';
 		<p>*Bar open 'til midnight</p>
 	</div>
 
-	
+	<div class="burger-map-container drop-border">
+		<Image src={burgerWithMenuInfo} alt="Our burgers are made with 100% black angus beef, the Dainer was featured on Man versus Food, our kaiser buns are freshly baked, and don't forget the tots." />
+	</div>
+
+	<div class="availability">
+		<small>*Availability and prices subject to change. We're always happy to accomodate modification requests, but please be aware that when it comes to serious allergies, we don't have the grill space to prevent trace cross-contamination from things like gluten and dairy.</small>
+	</div>
 </BaseLayout>
