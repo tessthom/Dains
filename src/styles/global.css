@@ -1,7 +1,9 @@
 :root {
   --background: #fefaee;
-  --primary: #da2525; 
+  --primary: #da2525;
   --secondary: #ffffff;
+
+  --measure: 60ch; /* axiomatic property for max-inline-sizes */
 }
 
 * {
@@ -19,11 +21,16 @@ main {
   line-height: 1.5;
 }
 
-img, iframe {
+img,
+iframe {
   display: block;
   width: 100%;
   height: auto;
   max-inline-size: 100%;
+}
+
+ul {
+  list-style-type: none;
 }
 
 a {
@@ -38,6 +45,21 @@ a {
 
 .cursive {
   font-family: 'Permanent Marker', cursive;
+}
+
+/* Every Layout */
+* {
+  max-inline-size: var(--measure);
+}
+
+html,
+body,
+div,
+header,
+nav,
+main,
+footer {
+  max-inline-size: none;
 }
 
 /* Utility Classes */
