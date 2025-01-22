@@ -4,7 +4,7 @@ import ScrollingBanner from '../components/Banner.astro';
 
 import { Image } from 'astro:assets';
 import dainsFullLogo from '../assets/logo-sm.png';
-import heroImg from '../assets/burger-with-loaded-fries.jpg';
+import foodFeature from '../assets/mozzarella-triangles-800.jpeg';
 
 const pageTitle = 'Home';
 ---
@@ -13,13 +13,7 @@ const pageTitle = 'Home';
 		color: var(--white);
 	}
 
-	.portrait {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: space-between;
-	}
-
+	/* Hero */
 	.hero {
 		background-image: linear-gradient(rgba(94, 45, 45, 0.16), rgba(94, 45, 45, 0.16)), url('../assets/burger-with-loaded-fries.jpg');
 		background-size: cover;
@@ -36,7 +30,6 @@ const pageTitle = 'Home';
 	}
 
 	.hero * {
-		/* text-shadow: 2px 2px 4px rgba(94, 45, 45, 0.16); */
 		text-shadow: var(--shadow-1);
 	}
 
@@ -72,6 +65,7 @@ const pageTitle = 'Home';
 		color: var(--red);
 	}
 
+	/* Hours Button */
 	.buttons-collage {
 		background-image: url('../assets/buttons-close.jpg');
 		background-size: cover;
@@ -129,8 +123,22 @@ const pageTitle = 'Home';
 		font-size: .95rem;
 	}
 
+	/* About */
 	.about {
 		background-color: var(--red);
+	}
+
+	.about .drop-border {
+		height: 90vh;
+		padding-inline: 1em;
+
+		text-align: center;
+		border-color: var(--white);
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-evenly;
 	}
 
 	.detail-logo {
@@ -138,15 +146,60 @@ const pageTitle = 'Home';
 		width: 80px;
 	}
 
-	.food-bg {
-		background-image: url('../assets/mozzarella-triangles-800.jpeg');
+	.about h3 {
+		font-size: var(--font-size-4);
+		transform: rotate(-4deg);
 	}
+
+	.about .body-text {
+		max-inline-size: 95%;
+		font-weight: var(--font-weight-3);
+	}
+
+	.cta--about {
+		background-color: var(--white);
+		color: var(--red);
+
+		display: block;
+		padding-block: .5em;
+		width: 90%;
+
+		font-size: calc(var(--font-size-4) - .15em);
+	}
+
+	/* Food Image Highlight */
+	.food-bg {
+		/* background-image: url('../assets/mozzarella-triangles-800.jpeg');
+		background-size: cover;
+		background-position: center;
+		height: 70vh; */
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr;
+	}
+	
+	.food-feature-img, .twinkle-sm, .twinkle-lg {
+		grid-column: 1 / 2;
+		grid-row: 1 / 2;
+	}
+
+	.twinkle-sm {
+		align-self: end;
+		margin-left: 30%;
+		margin-bottom: 40%;
+	}
+
+	.twinkle-lg {
+		align-self: end;
+		margin-left: 15%;
+		margin-bottom: 25%;
+	}
+
 </style>
 
 <BaseLayout pageTitle={pageTitle} isHome={true}>
 	<section class="bottom-border inset">
 		<div class="hero">
-			<!-- <Image class="hero-img portrait" src={heroImg} alt="A big juicy burger with a side of loaded fries covered in bacon and melted cheddar." /> -->
 			<h2 class="uppercase">Dain's Place</h2>
 			<address>
 				<span class="address-line">754 Ninth St</span>
@@ -173,25 +226,26 @@ const pageTitle = 'Home';
 		</div>
 	</section>
 
-	<section class="about">
-		<div>
+	<section class="about inset">
+		<div class="drop-border">
 			<Image class="detail-logo" src={dainsFullLogo} alt="Full detail Dain's Place logo in the style of stained glass with Old English lettering." />
 			<h3 class="uppercase cursive">A Durham Institution</h3>
 
 			<p class="body-text">Beloved by locals, students, Eagle's fans  and just about anybody with a penchant for potatoes, Dain's has been slinging juicy burgers and toasty tater tots since 2013. Come cozy up to the bar and make a new friend, or bring your own. Blah blah and more text here. Lorem ipsum flipsum bipsum and a sea shells by the sea shore. Rich white Reese Witherspoon - try saying that 5 times fast!</p>
 
-			<a class="uppercase" href="/about/">About the bar</a>
+			<a class="uppercase cursive cta--about" href="/about/">About the bar</a>
 		</div>
 	</section>
 
 	<section>
 		<div class="food-bg">
 			<!-- TODO: Get better pic of mozz. -->
-			<svg width="44" height="59" viewBox="0 0 44 59" fill="none" xmlns="http://www.w3.org/2000/svg">
+			 <Image class="food-feature-img" src={foodFeature} alt="A basket of crispy mozzarella triangles" />
+			<svg class="twinkle-sm" width="44" height="59" viewBox="0 0 44 59" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<path d="M22 0L24.9868 25.4949L44 29.5L24.9868 33.5051L22 59L19.0132 33.5051L0 29.5L19.0132 25.4949L22 0Z" fill="#FEFCF9"/>
 			</svg>
 				
-			<svg width="77" height="91" viewBox="0 0 77 91" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<svg class="twinkle-lg" width="77" height="91" viewBox="0 0 77 91" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<path d="M38.5 0L43.7269 39.3227L77 45.5L43.7269 51.6773L38.5 91L33.2731 51.6773L0 45.5L33.2731 39.3227L38.5 0Z" fill="#FEFCF9"/>
 			</svg>
 		</div>
