@@ -5,20 +5,21 @@ import phoneIcon from '../assets/phone-icon.svg';
 import instagramIcon from '../assets/instagram-logo.svg';
 import facebookIcon from '../assets/facebook-logo.svg';
 
+const { isHome } = Astro.props;
 const currentYear = new Date().getFullYear();
 ---
 <style>
   footer {
-    background-color: var(--primary);
-    color: var(--secondary);
+    background-color: var(--red);
+    color: var(--white);
   }
 
   .outline {
-    outline: 3px solid var(--secondary);
+    outline: 3px solid var(--white);
   }
 
   a {
-    color: var(--secondary);
+    color: inherit;
   }
 
   .icon {
@@ -35,7 +36,7 @@ const currentYear = new Date().getFullYear();
     </div>
   </div>
 
-  <Navigation showHomeLink={true} />
+  <Navigation isFooter={true} isHome={isHome} />
 
   <div>
     <a href="https://www.instagram.com/dains_place/" target="_blank">
