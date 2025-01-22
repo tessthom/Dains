@@ -1,61 +1,174 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ScrollingBanner from '../components/Banner.astro';
 
 import { Image } from 'astro:assets';
 import dainsFullLogo from '../assets/logo-sm.png';
+import heroImg from '../assets/burger-with-loaded-fries.jpg';
 
 const pageTitle = 'Home';
 ---
 <style>
 	section {
-		color: var(--secondary);
+		color: var(--white);
 	}
+
+	.portrait {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+	}
+
 	.hero {
-		background-image: linear-gradient(hsl(16, 76%, 66%, .12), hsl(16, 76%, 66%, .12)), url('../assets/burger-with-loaded-fries.jpg');
-		background-color: var(--background);
-		color: var(--secondary);
+		background-image: linear-gradient(rgba(94, 45, 45, 0.16), rgba(94, 45, 45, 0.16)), url('../assets/burger-with-loaded-fries.jpg');
+		background-size: cover;
+		color: var(--white);
+
+		text-align: center;
+
+		display: grid;
+		align-items: center;
+		grid-template-columns: 1fr;
+		gap: 2.5rem;
+
+		padding: 2em 1em;
 	}
+
+	.hero * {
+		/* text-shadow: 2px 2px 4px rgba(94, 45, 45, 0.16); */
+		text-shadow: var(--shadow-1);
+	}
+
+	.hero > * {
+		line-height: .95;
+	}
+
+	.hero h2 {
+		font-size: 8rem;
+	}
+
+	address {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: 1em;
+	}
+
+	.address-line, .tel {
+		font-family: 'Barlow Semi Condensed', sans-serif;
+		font-style: normal;
+		font-size: var(--font-size-8);
+		font-weight: var(--font-weight-7);
+
+		display: block;
+	}
+
+	.tel {
+		font-size: var(--font-size-7);
+	}
+
+	.cta {
+		color: var(--red);
+	}
+
 	.buttons-collage {
 		background-image: url('../assets/buttons-close.jpg');
-		color: var(--secondary);
+		background-size: cover;
+		color: var(--white);
+
+		height: 90vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		perspective: 1000px;
 	}
+
+	.hours-button {
+		width: 65vw;
+		height: 65vw;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 1em;
+		
+		text-align: center;
+
+		border-radius: 50%;
+		background-color: var(--red);
+		box-shadow: 3px 6px 8px 3px rgba(0,0,0,0.65), inset 3px 2px 4px rgba(255,251,237,0.57), inset -3px -5px 8px rgba(0, 0, 0, 0.4), inset 1px 2px 2px rgba(255,238,213,0.25);
+		transform: rotate3d(-2, -2, 1, -15deg);
+	}
+
+	.hours-button * {
+		line-height: .9;
+	}
+
+	.hours-button h3 {
+		font-size: var(--font-size-4);
+	}
+
+	.hours, .days {
+		font-family: 'Barlow Condensed', sans-serif;
+		font-weight: var(--font-weight-7);
+	}
+
+	.hours {
+		font-size: var(--font-size-7);
+	}
+
+	.days {
+		font-size: var(--font-size-5)
+	}
+
+	.hours-button small {
+		margin-top: 0.25em;
+		font-size: .95rem;
+	}
+
 	.about {
-		background-color: var(--primary);
+		background-color: var(--red);
 	}
+
 	.detail-logo {
-		border: 3px solid var(--secondary);
+		border: 3px solid var(--white);
 		width: 80px;
 	}
+
 	.food-bg {
 		background-image: url('../assets/mozzarella-triangles-800.jpeg');
 	}
 </style>
 
-<BaseLayout pageTitle={pageTitle}>
-	<section class="bottom-border">
+<BaseLayout pageTitle={pageTitle} isHome={true}>
+	<section class="bottom-border inset">
 		<div class="hero">
+			<!-- <Image class="hero-img portrait" src={heroImg} alt="A big juicy burger with a side of loaded fries covered in bacon and melted cheddar." /> -->
 			<h2 class="uppercase">Dain's Place</h2>
 			<address>
-				754 Ninth St<br />
-				Durham, NC<br />
-				919-416-8800
+				<span class="address-line">754 Ninth St</span>
+				<span class="address-line">Durham, NC</span>
 			</address>
+			<span class="tel">919-416-8800</span>
 		</div>
 
 		<div class="drop-border">
-			<a class="uppercase cursive" href="/menu/">See our menu</a>
+			<a class="uppercase cursive cta" href="/menu/">See our menu</a>
 		</div>
 	</section>
 
-	<section>
+	<section class="inset">
 		<div class="buttons-collage">
-			<div class="hours-button">
-				<div class="uppercase">
-					<h3>We're open</h3>
-					<p>11am - 12am</p>
-					<p>Mon - Sun</p>
-					<p>*Kitchen 'til 10pm</p>
-				</div>
+			<div class="hours-button uppercase">
+					<h3 class="cursive">We're open</h3>
+					<div class="no-gap">
+						<p class="hours">11am - 12am</p>
+						<p class="days">Mon - Sun</p>
+					</div>
+					<small class="cursive">*Kitchen 'til 10pm</small>
 			</div>
 		</div>
 	</section>
@@ -84,7 +197,5 @@ const pageTitle = 'Home';
 		</div>
 	</section>
 
-	<div class="banner-container">
-		<p class="uppercase">Fly Eagles Fly</p>
-	</div>
+	<ScrollingBanner />
 </BaseLayout>

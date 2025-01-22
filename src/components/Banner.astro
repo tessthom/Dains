@@ -1,0 +1,43 @@
+---
+
+---
+<style>
+  .banner-container {
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    padding: 1em, 0;
+  }
+
+  .banner-content {
+    display: inline-flex;
+    white-space: nowrap;
+    animation: scroll 30s linear infinite;
+  }
+
+  span {
+    padding-left: 1ch;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 4rem;
+    font-weight: var(--font-weight-9);
+    letter-spacing: var(--font-letterspacing-2);
+  }
+
+  /* Animation */
+  @keyframes scroll {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+</style>
+
+<div class="banner-container">
+  <div class="banner-content">
+    <span>FLY EAGLES FLYYYYY!!!</span>
+    <span>FLY EAGLES FLYYYYY!!!</span>
+  </div>
+</div>

@@ -1,13 +1,24 @@
 ---
-const { showHomeLink } = Astro.props;
+const { isFooter, isHome } = Astro.props;
 ---
-<nav aria-label={showHomeLink ? 'Primary' : 'Secondary'}>
+<style>
+  a:link, a:visited {
+    display: inline-block;
+    color: inherit;
+  }
+
+  a:hover {
+    font-weight: var(--font-weight-6)
+  }
+</style>
+
+<nav aria-label={isFooter ? 'Primary' : 'Secondary'}>
   <ul>
-    {showHomeLink && <li><a href="/">Home</a></li>}
+    {isFooter && !isHome && <li><a href="/">Home</a></li>}
     <li><a href="/about/">About</a></li>
     <li><a href="/location/">Location</a></li>
     <li><a href="/contact/">Contact</a></li>
     <li><a href="/menu/">Menu</a></li>
-    <li><a href="/faqs/">FAQs</a></li>
+    {isFooter && <li><a href="/faqs/">FAQs</a></li>}
   </ul>
 </nav>
