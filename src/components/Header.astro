@@ -2,8 +2,6 @@
 import Navigation from './Navigation.astro';
 import { Image } from 'astro:assets';
 import logo from '../assets/logo-black-border.png';
-
-const logoWidth = '';
 ---
 <style>
   header {
@@ -21,6 +19,7 @@ const logoWidth = '';
     width: 10vw;
     height: auto;
   }
+
 </style>
 
 <header class="inset">
@@ -29,5 +28,13 @@ const logoWidth = '';
       <Image src={logo} alt="Dain's Place logo" class="logo" />
     </a>
   </div>
-  <Navigation isFooter={false}  />
+
+  <nav class="nav nav--primary">
+    <ul>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/location/">Location</a></li>
+      <li><a href="/contact/">Contact</a></li>
+      <li><a href="/menu/">Menu</a></li>
+    </ul>
+  </nav>
 </header>
