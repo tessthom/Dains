@@ -1,0 +1,146 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../assets/logo-black-border.png';
+---
+<style>
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav {
+    background-color: var(--brown-0);
+
+    will-change: transform;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    top: 0;
+    bottom: 0;
+    z-index: 9999;
+    visibility: hidden;
+    transition: transform 0.4s cubic-bezier(0.46, 0.01, 0.32, 1), visibility 0s linear .4s;
+    transform: translateX(-100vw);
+  }
+  .nav.js-expanded {
+    transform: translateX(0);
+    content-visibility: visible;
+    visibility: visible;
+    transition: transform 0.4s cubic-bezier(0.46, 0.01, 0.32, 1);
+  }
+  .nav-list, .socials-list, .dev-credit {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+  }
+  .nav-list > li:first-of-type {
+    border-top: 3px solid var(--red);
+  }
+  .nav-list li {
+    width: 100%;
+    border-bottom: 3px solid var(--red);
+  }
+  .nav-list__link {
+    width: 100%;
+    line-height: 1;
+    padding-block: .5em;
+    /* TODO: Find more flexible way of calc'ing vertical offset to center Roboto Condensed */
+    padding-top: .6em;
+
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    font-family: 'Roboto Condensed Variable', sans-serif;
+    font-size: var(--font-size-6);
+    font-weight: var(--font-weight-5);
+  }
+  .nav-list__link:hover, .nav-list__link:active {
+    color: var(--white);
+    background-color: var(--red);
+  }
+  .external-link-list__social {
+    padding-top: var(--size-10);
+    padding-bottom: var(--size-5);
+  }
+  .external-link {
+    text-align: end;
+    font-family: 'Roboto Condensed Variable', sans-serif;
+    font-weight: var(--font-weight-4);
+    font-size: var(--font-size-5);
+  }
+  .external-link__social:hover, .external-link__social:active {
+    font-weight: var(--font-weight-6);
+  }
+  .external-link__dev-credit {
+    width: 100%;
+    /* display: flex; */
+    font-size: var(--font-size-fluid-0);
+    font-weight: var(--font-weight-4);
+  }
+  .external-link__dev-credit a {
+    font-weight: var(--font-weight-5);
+  }
+  .external-link__dev-credit a:hover {
+    font-weight: var(--font-weight-6);
+    border-bottom: 2px solid var(--red);
+  }
+</style>
+
+<nav class="nav" id="primary-navigation">
+  <!-- Logo/Home link -->
+  <div class="row padded-block padded-inline">
+    <div class="logo">
+      <a href="/">
+        <Image src={logo} alt="Dain's Place logo" class="logo" />
+      </a>
+    </div>
+    <button
+      class="btn__close"
+      type="button"
+      aria-controls="primary-navigation">
+      <svg
+      class="icon icon--red icon__close"
+      width="30"
+      height="30"
+      viewBox="0 0 30 30"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg">
+        <g clip-path="url(#clip0_2310_427)">
+          <path d="M2 2L28.3558 28.3558" stroke="#DA2525" stroke-width="3" stroke-linecap="round"/>
+          <path d="M2 28.3558L28.3558 2" stroke="#DA2525" stroke-width="3" stroke-linecap="round"/>
+        </g>
+        <defs>
+          <clipPath id="clip0_2310_427">
+            <rect width="30" height="30" fill="white"/>
+          </clipPath>
+        </defs>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Nav links -->
+  <ul class="uppercase nav-list">
+    <li><a class="nav-list__link nav__link--primary padded-inline" href="/about/">About</a><span></span></li>
+    <li><a class="nav-list__link nav__link--primary padded-inline" href="/location/">Location</a></li>
+    <li><a class="nav-list__link nav__link--primary padded-inline" href="/contact/">Contact</a></li>
+    <li><a class="nav-list__link nav__link--primary padded-inline" href="/menu/">Menu</a></li>
+  </ul>
+
+  <!-- External links -->
+  <div class="external-link-list__container">
+    <!-- Social media links -->
+    <ul class="external-link-list__social uppercase">
+      <li class="padded-inline external-link external-link__social">
+        <a class="external-link external-link__social" href="https://www.instagram.com/dains_place/" target="_blank">Instagram</a>
+      </li>
+      <li class="padded-inline external-link external-link__social">
+        <a class="external-link external-link__social" href="https://www.facebook.com/dainsplacedurham/" target="_blank">Facebook</a>
+      </li>
+    </ul>
+    <!-- Developer credit -->
+    <div class="padded-inline external-link external-link__dev-credit uppercase">Website designed & built by <a href="https://tessthomas.com/" target="_blank">Tess Thomas</a></div>
+  </div>
+</nav>

@@ -61,9 +61,12 @@ const pageTitle = 'Home';
 		font-size: var(--font-size-7);
 	}
 
-	.cta {
+	.cta--menu {
+		margin-top: var(--space-sm);
 		color: var(--red);
+		background-color: var(--white);
 	}
+
 
 	/* Hours Button */
 	.buttons-collage {
@@ -123,7 +126,7 @@ const pageTitle = 'Home';
 		font-size: .95rem;
 	}
 
-	/* About */
+	/* About section */
 	.about {
 		background-color: var(--red);
 	}
@@ -160,19 +163,11 @@ const pageTitle = 'Home';
 		background-color: var(--white);
 		color: var(--red);
 
-		display: block;
-		padding-block: .5em;
-		width: 90%;
-
 		font-size: calc(var(--font-size-4) - .15em);
 	}
 
 	/* Food Image Highlight */
 	.food-bg {
-		/* background-image: url('../assets/mozzarella-triangles-800.jpeg');
-		background-size: cover;
-		background-position: center;
-		height: 70vh; */
 		display: grid;
 		grid-template-columns: 1fr;
 		grid-template-rows: 1fr;
@@ -198,7 +193,7 @@ const pageTitle = 'Home';
 </style>
 
 <BaseLayout pageTitle={pageTitle} isHome={true}>
-	<section class="bottom-border inset">
+	<section class="bottom-border padded-all">
 		<div class="hero">
 			<h2 class="uppercase">Dain's Place</h2>
 			<address>
@@ -208,12 +203,12 @@ const pageTitle = 'Home';
 			<span class="tel">919-416-8800</span>
 		</div>
 
-		<div class="drop-border">
-			<a class="uppercase cursive cta" href="/menu/">See our menu</a>
+		<div class="drop-border cta cta--menu drop-on-click">
+			<a class="btn btn--outline uppercase cursive" href="/menu/">See our menu</a>
 		</div>
 	</section>
 
-	<section class="inset">
+	<section class="padded-all">
 		<div class="buttons-collage">
 			<div class="hours-button uppercase">
 					<h3 class="cursive">We're open</h3>
@@ -226,14 +221,14 @@ const pageTitle = 'Home';
 		</div>
 	</section>
 
-	<section class="about inset">
-		<div class="drop-border">
+	<section class="about padded-all">
+		<div class="drop-border drop-border--white">
 			<Image class="detail-logo" src={dainsFullLogo} alt="Full detail Dain's Place logo in the style of stained glass with Old English lettering." />
 			<h3 class="uppercase cursive">A Durham Institution</h3>
 
 			<p class="body-text">Beloved by locals, students, Eagle's fans  and just about anybody with a penchant for potatoes, Dain's has been slinging juicy burgers and toasty tater tots since 2013. Come cozy up to the bar and make a new friend, or bring your own. Blah blah and more text here. Lorem ipsum flipsum bipsum and a sea shells by the sea shore. Rich white Reese Witherspoon - try saying that 5 times fast!</p>
 
-			<a class="uppercase cursive cta--about" href="/about/">About the bar</a>
+			<a class="btn btn--solid uppercase cursive cta cta--about" href="/about/">About the bar</a>
 		</div>
 	</section>
 

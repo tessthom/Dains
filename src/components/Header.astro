@@ -1,9 +1,10 @@
 ---
-import Navigation from './Navigation.astro';
+import Hamburger from './Hamburger.astro';
+import Navigation from './NavPrimary.astro';
 import { Image } from 'astro:assets';
 import logo from '../assets/logo-black-border.png';
 ---
-<style>
+<style is:global>
   header {
     display: flex;
     flex-wrap: wrap;
@@ -11,7 +12,7 @@ import logo from '../assets/logo-black-border.png';
     align-items: center;
   }
 
-  .logo-container {
+  .container__logo {
     min-width: 50px;
   }
 
@@ -22,19 +23,12 @@ import logo from '../assets/logo-black-border.png';
 
 </style>
 
-<header class="inset">
-  <div class="logo-container">
+<header class="padded-all bottom-border">
+  <div class="container__logo">
     <a href="/">
       <Image src={logo} alt="Dain's Place logo" class="logo" />
     </a>
   </div>
-
-  <nav class="nav nav--primary">
-    <ul>
-      <li><a href="/about/">About</a></li>
-      <li><a href="/location/">Location</a></li>
-      <li><a href="/contact/">Contact</a></li>
-      <li><a href="/menu/">Menu</a></li>
-    </ul>
-  </nav>
+  <Hamburger />
 </header>
+<Navigation />

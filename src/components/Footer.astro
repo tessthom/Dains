@@ -1,5 +1,5 @@
 ---
-import Navigation from './Navigation.astro';
+import Navigation from './NavSecondary.astro';
 import { Image } from 'astro:assets';
 import phoneIcon from '../assets/phone-icon.svg';
 import instagramIcon from '../assets/instagram-logo.svg';
@@ -65,7 +65,7 @@ const currentYear = new Date().getFullYear();
   }
 </style>
 
-<footer class="inset">
+<footer class="padded-all">
   <div class="tel-cta-container">
     <p class="uppercase cursive tel-cta">Call to order carryout</p>
     <div class="outline tel-btn">
@@ -78,10 +78,10 @@ const currentYear = new Date().getFullYear();
 
   <div class="social-media-container">
     <a href="https://www.instagram.com/dains_place/" target="_blank">
-      <svg class="icon instagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><circle cx="128" cy="128" r="40" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="16"/><rect x="32" y="32" width="192" height="192" rx="48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><circle cx="180" cy="76" r="12" fill="currentColor"/></svg>
+      <svg class="icon icon--white instagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><circle cx="128" cy="128" r="40" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="16"/><rect x="32" y="32" width="192" height="192" rx="48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><circle cx="180" cy="76" r="12" fill="currentColor"/></svg>
     </a>
     <a href="https://www.facebook.com/dainsplacedurham/" target="_blank">
-      <svg class="icon facebook" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><circle cx="128" cy="128" r="96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><path d="M168,88H152a24,24,0,0,0-24,24V224" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="96" y1="144" x2="160" y2="144" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+      <svg class="icon icon-white facebook" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><circle cx="128" cy="128" r="96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><path d="M168,88H152a24,24,0,0,0-24,24V224" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="96" y1="144" x2="160" y2="144" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
     </a>
   </div>
 

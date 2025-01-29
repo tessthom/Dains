@@ -40,5 +40,9 @@ const { pageTitle, isHome = false } = Astro.props;
     </main>
 
 		<Footer isHome={isHome} /> <!-- Only display Home link if curr page is not Home -->
+
+		<script>
+			import '../scripts/mobileMenu.js';
+		</script>
 	</body>
 </html>

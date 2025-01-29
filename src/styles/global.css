@@ -9,6 +9,10 @@
   --black: var(--stone-11);
 
   --measure: 60ch; /* for max-inline-sizes */
+  --border: 3px;
+  --space-sm: var(--size-fluid-2);
+  --space-md: var(--size-fluid-4);
+  --space-lg: var(--size-fluid-8);
 }
 
 * {
@@ -20,10 +24,13 @@
 body {
   background-color: var(--background);
   color: var(--red);
+  font-size: 1.125rem;
+  font-family: 'Roboto Condensed Variable', sans-serif;
 }
 
 main {
   line-height: 1.5;
+  overflow-x: hidden;
 }
 
 img,
@@ -51,7 +58,7 @@ a, a:link, a:visited {
 }
 
 .body-text {
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Roboto Condensed Variable', sans-serif;
 }
 
 .cursive {
@@ -73,8 +80,20 @@ footer {
 }
 
 /* Utility Classes */
-.inset {
-  padding: var(--size-fluid-2);
+.break {
+  display: inline-block;
+}
+
+.padded-all {
+  padding: var(--space-sm);
+}
+
+.padded-block {
+  padding-block: var(--space-sm);
+}
+
+.padded-inline {
+  padding-inline: var(--space-sm);
 }
 
 .uppercase {
@@ -92,6 +111,58 @@ footer {
 .drop-border {
   border: 3px solid var(--red);
   border-bottom: 10px solid var(--red);
+}
+
+.drop-border--white {
+  border: 3px solid var(--white);
+  border-bottom: 10px solid var(--white);
+}
+
+/* Global Animations/Effects */
+.drop-on-click {
+  border-top: 3px solid var(--red);
+  border-bottom: 10px solid var(--red);
+  transition: border-top 100ms ease-in, border-bottom 100ms ease-in;
+}
+
+.drop-on-click:active {
+  border-top: 10px solid var(--red);
+  border-bottom: 3px solid var(--red);
+}
+
+/* Global Components */
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-between;
+}
+
+.btn {
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: calc(var(--font-size-4) - .15em);
+  text-wrap: nowrap;
+
+  padding-block: var(--size-2);
+  padding-inline: var(--size-9);
+}
+
+.btn--solid {
+  padding-block: calc(var(--size-2) + var(--border));
+}
+
+.icon--red {
+  background-color: var(--brown-0);
 }
 
 /* Layout */
