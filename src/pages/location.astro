@@ -7,50 +7,109 @@ import dainsFromStreet from '../assets/barfront.jpg';
 const pageTitle = 'Location';
 ---
 <style>
-	iframe {
-		aspect-ratio: 1 / 1;
+	.container {
+		padding: var(--space-md) var(--space-sm);
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
 	}
 
+	h2, section, aside {
+		text-align: center;
+	}
+
+	.location, .hours {
+		padding: var(--space-sm) var(--space-md);
+		display: flex;
+		flex-direction: column;
+		gap: .25em;
+	}
+
+	p {
+		margin-inline: auto;
+		max-width: 20ch;
+		font-size: 1.25rem;
+		line-height: 1.5rem;
+	}
+
+	address {
+		font-weight: var(--font-weight-7);
+		font-size: 1.5rem;
+		font-style: normal;
+		line-height: 2.125rem;
+	}
+
+	iframe {
+		width: 100%;
+		height: auto;
+	}
+	
 	img {
-		aspect-ratio: 1 / 1;
 		object-fit: cover;
 	}
 
+	iframe, img {
+		aspect-ratio: 1 / 1;
+		outline: var(--border) solid var(--red);
+	}
+
 	aside {
+		padding: var(--space-sm) var(--space-md);
+		outline: var(--border) solid var(--red);
 		background-color: var(--red);
 		color: var(--white);
+		font-family: 'Roboto Condensed Variable', sans-serif;
+	}
+
+	.hours h3 {
+		font-size: 1.25rem;
+		font-weight: var(--font-weight-4);
+	}
+ 
+	.days, .time {
+		font-size: 1.5rem;
+		font-weight: var(--font-weight-7);
+		line-height: 2rem;
+	}
+
+	.kitchen {
+		font-size: 1rem;
+		font-style: italic;
+		font-weight: var(--font-weight-3);
 	}
 </style>
 
 <BaseLayout pageTitle={pageTitle}>
-	<article>
+	<div class="container">
 		<h2 class="uppercase">Come Get the Munchies!</h2>
-		<div class="box-white drop-border">
-			<p>Dain's Place is located in the heart of town, at:</p>
-			<address>
-				754 Ninth Street<br>
-				Durham, NC 27705
-			</address>
+		<section>
+			<div class="location box-white drop-border">
+				<p>Dain's Place is located in the heart of town, at:</p>
+				<address>
+					754 Ninth Street<br>
+					Durham, NC 27705
+				</address>
+			</div>
+		</section>
+
+		<div>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3227.43892593686!2d-78.92450288875555!3d36.00957361175304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89ace3f8a2c30097%3A0xdcd53772bff6ccfa!2sDain&#39;s%20Place!5e0!3m2!1sen!2sus!4v1736456926115!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 		</div>
-	</article>
 
-	<div>
-		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3227.43892593686!2d-78.92450288875555!3d36.00957361175304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89ace3f8a2c30097%3A0xdcd53772bff6ccfa!2sDain&#39;s%20Place!5e0!3m2!1sen!2sus!4v1736456926115!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+		<aside>
+			<p class="cursive uppercase">Look for the big D!</p>
+		</aside>
+
+		<div>
+			<Image src={dainsFromStreet} alt="Front view of Dain's Place, a black brick building with a red awning and sunny patio." />
+		</div>
+
+		<section class="hours box-white drop-border">
+			<h3>We're open:</h3>
+			<p class="days">Monday - Sunday</p>
+			<p class="time">11am - 12am</p>
+			<p class="kitchen">*Kitchen 'til 10pm</p>
+		</section>
 	</div>
-
-	<aside>
-		<p class="uppercase">Look for the big D!</p>
-	</aside>
-
-	<div>
-		<Image src={dainsFromStreet} alt="Front view of Dain's Place, a black brick building with a red awning and sunny patio." />
-	</div>
-
-	<section class="box-white drop-border">
-		<h3>We're open:</h3>
-		<p>Monday - Sunday</p>
-		<p>11am - 12am</p>
-		<p>*Kitchen 'til 10pm</p>
-	</section>
 
 </BaseLayout>

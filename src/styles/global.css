@@ -57,6 +57,11 @@ a, a:link, a:visited {
   font-weight: var(--font-weight-7);
 }
 
+h2 {
+  font-size: 3.375rem;
+  line-height: 1;
+}
+
 .body-text {
   font-family: 'Roboto Condensed Variable', sans-serif;
 }

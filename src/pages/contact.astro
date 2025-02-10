@@ -3,7 +3,74 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 const pageTitle = 'Contact';
 ---
+<style>
+	.container, form {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		padding-block: var(--space-md);
+		padding-inline: var(--space-sm);
+	}
+
+	form {
+		padding-inline: 0;
+		align-items: stretch;
+		gap: var(--space-sm);
+	}
+
+	input, textarea {
+		padding-block: calc(var(--space-sm) - 0.25em);
+		padding-inline: var(--space-sm);
+		background-color: var(--white);
+		color: var(--red);
+
+		border-radius: 0;
+		border: 3px solid var(--red);
+	}
+
+	input::placeholder, textarea::placeholder {
+		color: var(--red);
+		opacity: 1;
+	}
+
+	textarea {
+		height: 30ch;
+	}
+
+	button {
+		background-color: var(--white);
+		font-size: 1.5rem;
+	}
+
+	small {
+		display: block;
+		font-size: 0.85rem;
+		font-weight: var(--font-weight-3);
+		text-align: center;
+	}
+
+	.bold {
+		display: block;
+		font-weight: var(--font-weight-7);
+	}
+</style>
 
 <BaseLayout pageTitle={pageTitle}>
-	<h2>Get in Touch</h2>
+	<div class="container">
+		<h2 class="uppercase">Get in Touch</h2>
+
+		<form name="contact" method="POST" data-netlify="true">
+			<label for="name" hidden>Name</label>
+			<input type="text" name="name" placeholder="NAME">
+			<label for="email" hidden>Email</label>
+			<input type="email" name="email" placeholder="EMAIL">
+			<label for="message" hidden>Message</label>
+			<textarea name="message" placeholder="MESSAGE"></textarea>
+			<button type="submit" class="btn cursive drop-border drop-on-click">Send Message</button>
+		</form>
+
+		<small class="detail">If you've got a burgermergency, please give us a call directly at: <span class="bold">(919) 416-8800</span>.</small>
+	</div>
 </BaseLayout>

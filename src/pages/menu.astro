@@ -6,24 +6,58 @@ import burgerWithMenuInfo from '../assets/burger-map-1000.jpg';
 
 const pageTitle = 'Menu';
 ---
+<style>
+	.container {
+		padding-block: var(--space-md);
+		padding-inline: var(--space-sm);
+
+		text-align: center;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: var(--space-md);
+	}
+
+	.stack {
+		width: 100%;
+
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-sm);
+	}
+
+	.hours-details {
+		font-family: 'Roboto Condensed Variable', sans-serif;
+		font-size: 1rem;
+	}
+
+	.bold {
+		font-weight: var(--font-weight-7);
+	}
+
+	.availability {
+		font-weight: var(--font-weight-3);
+		line-height: 1rem;
+	}
+</style>
 
 <BaseLayout pageTitle={pageTitle}>
-	<h2>Menus</h2>
-	<div class="stack">
-		<a class="uppercase cursive drop-border box-white" href="#">Food</a>
-		<a class="uppercase cursive drop-border box-white" href="#">Drinks</a>
-	</div>
-
-	<div class="hours-details">
-		<p>Our kitchen is open every day from 11am to 10pm</p>
-		<p>*Bar open 'til midnight</p>
-	</div>
-
-	<div class="burger-map-container drop-border">
-		<Image src={burgerWithMenuInfo} alt="Our burgers are made with 100% black angus beef, the Dainer was featured on Man versus Food, our kaiser buns are freshly baked, and don't forget the tots." />
-	</div>
-
-	<div class="availability">
-		<small>*Availability and prices subject to change. We're always happy to accomodate modification requests, but please be aware that when it comes to serious allergies, we don't have the grill space to prevent trace cross-contamination from things like gluten and dairy.</small>
+	<div class="container">
+		<h2 class="uppercase">Menus</h2>
+		<div class="stack">
+			<a class="uppercase cursive drop-border box-white btn drop-on-click" href="#" target="_blank">Food</a>
+			<a class="uppercase cursive drop-border box-white btn drop-on-click" href="#" target="_blank">Drinks</a>
+		</div>
+		<div class="hours-details">
+			<p class="bold">Our kitchen is open every day from 11am to 10pm</p>
+			<p>*Bar open 'til midnight</p>
+		</div>
+		<div class="burger-map-container drop-border">
+			<Image src={burgerWithMenuInfo} alt="Our burgers are made with 100% black angus beef, the Dainer was featured on Man versus Food, our kaiser buns are freshly baked, and don't forget the tots." />
+		</div>
+		<div class="availability">
+			<small>*Availability and prices subject to change, especially with seasonal beers. Please give us a call for gauranteed up-to-date menu information.</small>
+		</div>
 	</div>
 </BaseLayout>
