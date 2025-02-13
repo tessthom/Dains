@@ -29,13 +29,26 @@ const pageTitle = 'About Us';
 		font-weight: var(--font-weight-6);
 	}
 	.carousel {
-		background-image: url('../assets/friends-sharing-tots-1000.jpg');
-		background-size: cover;
+		background-image: url('../assets/gallery/1-friends-sharing-tots-1000.jpg');
+		background-size: contain;
 		background-repeat: no-repeat;
 		background-position: center;
 		/* TODO: adjust sizing when component built */
 		width: 100%;
-		aspect-ratio: 16 / 9;
+		aspect-ratio: 5 / 3.75;
+
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0.5rem;
+	}
+	.circle-wrapper {
+		border-radius: 50%;
+		background-color: rgba(255,255,255,0.5);
+		padding: 0.25rem;
+	}
+	.caret {
+		fill: var(--red);
 	}
 	section.friends {
 		padding-block: var(--space-md);
@@ -118,6 +131,12 @@ const pageTitle = 'About Us';
 		<h3 class="btn btn--solid cursive uppercase">Friends + Fries = Family</h3>
 		<div class="carousel drop-border">
 			<!-- TODO: Build carousel. Find built-in component or write script? Remove current placeholder bg image -->
+			<div class="circle-wrapper">
+				<svg class="caret caret__back" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"></path></svg>
+			</div>
+			<div class="circle-wrapper">
+				<svg class="caret caret__forward" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path></svg>
+			</div>
 		</div>
 		<div class="customer-quote col">
 			<blockquote>“After 2 days of not eating in preparation for a medical procedure, the first thought I had after awaking from anesthesia was not of my wife or my child, but how I was going to eat the %*$# out of a burger and fries at Dain's afterwards”</blockquote>
