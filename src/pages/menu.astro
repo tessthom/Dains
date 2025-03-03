@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 import { Image } from 'astro:assets';
-import burgerWithMenuInfo from '../assets/burger-map-1000.jpg';
+import burgerWithMenuInfo from '../assets/burger-map-1000.webp';
 
 const pageTitle = 'Menu';
 ---
@@ -46,8 +46,8 @@ const pageTitle = 'Menu';
 	<div class="container">
 		<h2 class="uppercase">Menus</h2>
 		<div class="stack">
-			<a class="uppercase cursive drop-border box-white btn drop-on-click" href="/DainsPlaceFoodMenus-10-2024.pdf" target="_blank">Food</a>
-			<a class="uppercase cursive drop-border box-white btn drop-on-click" href="#" target="_blank">Drinks</a>
+			<a class="uppercase cursive drop-border box-white btn drop-on-click" href="/dains-place-food-menu.pdf" target="_blank">Food</a>
+			<a class="uppercase cursive drop-border box-white btn drop-on-click" href="/dains-place-drinks-menu.pdf" target="_blank">Drinks</a>
 		</div>
 		<div class="hours-details">
 			<p class="bold">Our kitchen is open every day from 11am to 10pm</p>
@@ -57,7 +57,7 @@ const pageTitle = 'Menu';
 			<Image src={burgerWithMenuInfo} alt="Our burgers are made with 100% black angus beef, the Dainer was featured on Man versus Food, our kaiser buns are freshly baked, and don't forget the tots." />
 		</div>
 		<div class="availability">
-			<small>*Availability and prices subject to change, especially with seasonal beers. Please give us a call for gauranteed up-to-date menu information.</small>
+			<small>*Availability and prices subject to change, especially with seasonal beers. Please give us a call for guaranteed up-to-date menu information.</small>
 		</div>
 	</div>
 </BaseLayout>

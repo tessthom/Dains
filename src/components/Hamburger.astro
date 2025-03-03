@@ -7,10 +7,15 @@
     align-items: center;
     justify-content: center;
   }
+
+  /* Hide hamburger button at tablet and greater screen sizes */
+  @media (min-width: 654px) {
+    .btn__hamburger {
+      display: none;
+    }
+  }
 </style>
-<!-- TODO: Removed until script extracted per Astro reqs -->
-<!--     aria-expanded={isOpen} -->
-<!-- aria-label={isOpen ? 'Close menu' : 'Open menu'} -->
+
 <button 
   class="btn__hamburger" 
   type="button" 

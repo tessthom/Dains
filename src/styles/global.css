@@ -45,14 +45,22 @@ ul {
   list-style-type: none;
 }
 
-a, a:link, a:visited {
+a,
+a:link,
+a:visited {
   text-decoration: none;
   cursor: pointer;
   color: inherit;
 }
 
 /* Fonts */
-.heading-text, h1, h2, h3, h4, h5, h6 {
+.heading-text,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: var(--font-weight-7);
 }
@@ -70,9 +78,9 @@ h2 {
   font-family: 'Permanent Marker', cursive;
 }
 
-* {
+/* * {
   max-inline-size: var(--measure);
-}
+} */
 
 html,
 body,
@@ -155,7 +163,7 @@ footer {
   justify-content: center;
   align-items: center;
 
-  font-size: calc(var(--font-size-4) - .15em);
+  font-size: calc(var(--font-size-4) - 0.15em);
   text-wrap: nowrap;
 
   padding-block: var(--size-2);
@@ -178,4 +186,20 @@ h1 {
 
 main {
   display: grid;
+}
+
+/* Tablet */
+@media (min-width: 654px) {
+  /* Inline primary navigation */
+  .btn__hamburger {
+    display: none; /* hide hamburger btn */
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+}
+
+/* Large desktop */
+@media (min-width: 1440px) {
 }
