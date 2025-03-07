@@ -24,7 +24,8 @@
 body {
   background-color: var(--background);
   color: var(--red);
-  font-size: 1.125rem;
+  /* font-size: 1.125rem; */
+  font-size: clamp(1.125rem, 0.148rem + 2.389vw, 1.5rem);
   font-family: 'Roboto Condensed Variable', sans-serif;
 }
 
@@ -72,15 +73,14 @@ h2 {
 
 .body-text {
   font-family: 'Roboto Condensed Variable', sans-serif;
+  /* font-size: clamp(1.125rem, 0.148rem + 2.389vw, 1.5rem); */
+  font-size: clamp(1.15rem, 0.15rem + 2.75vw, 1.35rem);
+  line-height: 1.5em;
 }
 
 .cursive {
   font-family: 'Permanent Marker', cursive;
 }
-
-/* * {
-  max-inline-size: var(--measure);
-} */
 
 html,
 body,
@@ -193,6 +193,11 @@ main {
   /* Inline primary navigation */
   .btn__hamburger {
     display: none; /* hide hamburger btn */
+  }
+
+  /* Prevent Home page's hero text from wrapping */
+  .hero h2 {
+    white-space: nowrap;
   }
 }
 
