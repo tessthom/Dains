@@ -48,7 +48,7 @@ const pageTitle = 'Home';
 
 	.hero h2 {
 		font-size: clamp(8.25rem, 12vw + 1.5rem, 10rem);
-		color: var(--background);
+		color: var(--white);
 		margin: 0 auto;
 		margin-top: -.25ch; /* offset font's stubborn vertical alignment */
 		/* color: #fbd0a2; */
@@ -74,6 +74,7 @@ const pageTitle = 'Home';
 
 	.tot {
 		width: 4.5rem;
+		/* width: 70%; */
 	}
 
 	.address-wrapper {
@@ -92,12 +93,12 @@ const pageTitle = 'Home';
 	.address-line, .tel {
 		font-family: 'Barlow Semi Condensed', sans-serif;
 		font-style: normal;
-		/* font-size: var(--font-size-8); */
-		font-size: clamp(4.15rem, 8vw, 6.5rem);
+		font-size: clamp(3.5rem, 2.965rem + 3.419vw, 6.5rem);
 		line-height: 1;
 		font-weight: var(--font-weight-8);
 		display: block;
 		text-align: center;
+		margin-bottom: .25rem;
 	}
 	
 	.cta--menu .btn {
@@ -130,7 +131,6 @@ const pageTitle = 'Home';
 
 		perspective: 1000px;
 	}
-
 
 	.hours-button {
 		width: 65vw;
@@ -185,7 +185,7 @@ const pageTitle = 'Home';
 
 	.about .drop-border {
 		height: 90vh;
-		padding-inline: 1em;
+		padding-inline: 5%;
 
 		text-align: center;
 		border-color: var(--white);
@@ -194,6 +194,7 @@ const pageTitle = 'Home';
 		flex-direction: column;
 		align-items: center;
 		justify-content: space-evenly;
+		gap: .5rem;
 	}
 
 	.detail-logo {
@@ -203,7 +204,7 @@ const pageTitle = 'Home';
 
 	.about h3 {
 		font-size: var(--font-size-4);
-		font-size: clamp(1.75rem, 0.942rem + 1.365vw, 2rem);
+		font-size: clamp(1.5rem, 0.942rem + 1.365vw, 2rem);
 		transform: rotate(-4deg);
 		text-wrap: nowrap;
 	}
@@ -223,11 +224,8 @@ const pageTitle = 'Home';
 	}
 
 	@media (min-width: 654px) {
-		.tot.mobile {
-			display: none;
-		}
 		.address-wrapper {
-			padding-block: 8rem;
+			/* padding-block: 4rem; */
 		}
 		.about-wrapper {
 			display: grid;
@@ -290,6 +288,9 @@ const pageTitle = 'Home';
 			border: none;
 			font-size: 1.5rem;
 			padding: 1.25rem 4.5rem;
+		}
+		.tot.mobile {
+			display: none;
 		}
 		.tot {
 			display: block;

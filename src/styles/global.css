@@ -82,6 +82,7 @@ h2 {
   font-family: 'Roboto Condensed Variable', sans-serif;
   /* font-size: clamp(1.125rem, 0.148rem + 2.389vw, 1.5rem); */
   font-size: clamp(1.15rem, 0.15rem + 2.75vw, 1.45rem);
+  font-size: clamp(1rem, 1.026rem + 0.35vw, 1.45rem);
   line-height: 1.5em;
 }
 
