@@ -15,6 +15,13 @@
   --space-lg: var(--size-fluid-8);
 }
 
+@media (min-width: 654px) {
+  :root {
+    --space-sm: 1.75rem;
+    --space-md: 3.25rem;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -74,7 +81,7 @@ h2 {
 .body-text {
   font-family: 'Roboto Condensed Variable', sans-serif;
   /* font-size: clamp(1.125rem, 0.148rem + 2.389vw, 1.5rem); */
-  font-size: clamp(1.15rem, 0.15rem + 2.75vw, 1.35rem);
+  font-size: clamp(1.15rem, 0.15rem + 2.75vw, 1.45rem);
   line-height: 1.5em;
 }
 
