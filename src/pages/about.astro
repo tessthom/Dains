@@ -54,13 +54,13 @@ const pageTitle = 'About Us';
 		position: relative;
 	}
 	.circle-wrapper {
-		position: absolute;
+		/* position: absolute;
 		top: 50%;
 		transform: translateY(-50%);
 
 		border-radius: 50%;
 		background-color: rgba(255,255,255,0.5);
-		padding: 0.25rem;
+		padding: 0.25rem; */
 
 		/* TODO: REDISPLAY WHEN SCRIPT OR PACKAGE INSTALL ALLOWS INTERACTIVITY */
 		display: none;
@@ -124,13 +124,13 @@ const pageTitle = 'About Us';
 		text-wrap: nowrap;
 	}
 	.line__top {
-		padding-inline-end: 4.5ch;
+		padding-inline-end: 3.5ch;
 	}
 	.line__center {
-		padding-inline-end: 1.5ch;
+		padding-inline-end: .75ch;
 	}
 	.line__bottom {
-		padding-inline-start: 2.5ch;
+		padding-inline-start: 1.5ch;
 	}
 	.motto .place {
 		display: inline-block;
@@ -242,12 +242,18 @@ const pageTitle = 'About Us';
 			/* justify-content: start; */
 			align-items: center;
 			padding-block: 0;
-			gap: 4rem;
+			gap: var(--size-fluid-4);
 		}
 		.motto h3 {
 			font-size: clamp(3.5rem, 4rem + 1vw, 6rem);
 			justify-content: center;
 			align-items: center;
+		}
+		.motto .line__center {
+			padding-inline-end: 0;
+		}
+		.motto .place {
+			transform: translateY(-.5ch);
 		}
 		.motto .content {
 			margin-block: 0;
