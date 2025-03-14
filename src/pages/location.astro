@@ -127,14 +127,16 @@ const pageTitle = 'Location';
 		.photo-desktop {
 			display: block;
 		}
-		/* .sticker {
-			position: absolute;
-			right: 10%;
-			bottom: 10%;
-			width: 36%;
-			aspect-ratio: initial;
-			transform: rotate(-15deg);
-		} */
+	}
+
+	@media (min-width: 1200px) {
+		.container {
+			max-width: 1000px;
+			margin-inline: auto;
+
+			padding-block-start: var(--size-fluid-4);
+			padding-block-end: var(--size-fluid-7);
+		}
 	}
 </style>
 

@@ -11,8 +11,17 @@ const pageTitle = 'FAQs'
 
 		padding-block: var(--space-md);
 		padding-inline: var(--space-sm);
+		justify-content: center;
 		text-align: center;
 		gap: var(--space-md);
+
+		max-width: 800px;
+		margin-inline: auto;
+	}
+
+	h2 {
+		max-inline-size: none;
+		font-size: clamp(4rem, 2.965rem + 4.419vw, 6.5rem);
 	}
 
 	.hover-cursor {
@@ -28,6 +37,8 @@ const pageTitle = 'FAQs'
 
 		padding-block: calc(var(--space-sm) - 0.25em);
 		padding-inline: var(--space-sm);
+		padding: .5em .75em;
+
 		text-align: start;
 
 		margin-block-end: 1em;
@@ -39,6 +50,7 @@ const pageTitle = 'FAQs'
 		background-color: var(--white);
 		display: flex;
 		justify-content: space-between;
+		gap: var(--size-fluid-3);
 
 		&::-webkit-details-marker {
 			display: none;
@@ -98,7 +110,7 @@ const pageTitle = 'FAQs'
 				</details>
 				<details>
 					<summary>Do you have any non-alcoholic beverage options, other than sodas and milk?</summary><div class="spacer"></div>
-					You bet. Our drinks menu offers a growing array of delicious N/A selections, from ciders to beers in a variety of styles to spritzes, and even N/A spirits.
+					We've got lots! Our drinks menu offers a growing array of delicious N/A selections, from ciders to beers in a variety of styles to spritzes.
 				</details>
 				<details>
 					<summary>What's the story with your burger patties?</summary><div class="spacer"></div>
@@ -114,7 +126,7 @@ const pageTitle = 'FAQs'
 				</details>
 				<details>
 					<summary>What if I have a food allergy?</summary><div class="spacer"></div>
-					We do our best to accomodate all modification requests, but please note that trace cross-contamination from things like gluten and dairy is unavoidable because we just don't have the space to maintian a totally separate cook area. Please bear this in mind if your allergy is severe. Our fryer uses soybean oil, and our kaiser buns are not made with dairy.
+					We do our best to accomodate all modification requests, but please note that trace cross-contamination from things like gluten and dairy is unavoidable because we don't have the space to maintain a completely separate cook area. Please bear this in mind if your allergy is severe. Our fryer uses soybean oil, and our kaiser buns are not baked with dairy.
 				</details>
 				<details>
 					<summary>Say more about the fryer oil...</summary><div class="spacer"></div>

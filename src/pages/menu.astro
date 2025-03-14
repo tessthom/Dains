@@ -54,9 +54,10 @@ const pageTitle = 'Menu';
 			margin-bottom: var(--size-fluid-6);
 			display: grid;
 			grid-template-columns: 1fr 1fr;
-			grid-template-columns: minmax(400px, 1fr) 1fr;
+			grid-template-columns: minmax(400px, 1fr) 1.25fr;
 			grid-template-rows: auto;
 			gap: var(--size-fluid-4);
+			justify-content: space-between;
 
 			/* max content width for wider screens */
 			max-width: 1400px;
@@ -96,7 +97,16 @@ const pageTitle = 'Menu';
 			max-width: 500px;
 		}
 		.availability small {
-			font-size: min(.65em, var(--font-size-1));
+			font-size: min(.75em, var(--font-size-1));
+		}
+	}
+
+	@media (min-width: 1000px) {
+		.container {
+
+		}
+		.burger-map-container img {
+			/* max-width: 600px; */
 		}
 	}
 </style>
