@@ -18,8 +18,24 @@ const { variant = 'primary', isHome } = Astro.props;
   }
 
   a {
-    font-size: 1.15rem;
+    /* font-size: 1.15rem; */
     font-weight: var(--font-weight-7);
+    font-size: clamp(1.15rem, 0.942rem + 1.165vw, 1.35rem);
+  }
+
+  @media (min-width: 654px) {
+    /* lighten footer nav links weight for larger screens */
+    a {
+      font-weight: var(--font-weight-6);
+    }
+  }
+
+  @media (min-width: 1400px) {
+    .nav {
+      width: 1400px;
+      max-width: 1400px;
+      padding-inline: var(--space-sm);
+    }
   }
 </style>
 

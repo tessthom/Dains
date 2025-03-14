@@ -28,25 +28,39 @@ import logo from '../assets/logo.png';
   /* Layout change at tablet and larger screen sizes */
   @media (min-width: 654px) {
     .wrapper-container {
+      border-bottom: 3px solid var(--red);
+    }
+    .width-wrapper {
       min-width: 100%;
       display: flex;
       justify-content: space-between;
-      border-bottom: 3px solid var(--red);
+      /* border-bottom: 3px solid var(--red); */
     }
     header.bottom-border {
       border: none;
     }
   }
+
+  @media (min-width: 1400px) {
+    .width-wrapper {
+      min-width:auto;
+      /* width: 100%; */
+      max-width: 1400px;
+      margin-inline: auto;
+    }
+  }
 </style>
 
 <div class="wrapper-container">
-  <header class="padded-all bottom-border">
-    <div class="container__logo">
-      <a href="/">
-        <Image src={logo} alt="Dain's Place logo" class="logo" width="160" />
-      </a>
-    </div>
-    <Hamburger />
-  </header>
-  <Navigation class="item" />
+  <div class="width-wrapper">
+    <header class="padded-all bottom-border">
+      <div class="container__logo">
+        <a href="/">
+          <Image src={logo} alt="Dain's Place logo" class="logo" width="160" />
+        </a>
+      </div>
+      <Hamburger />
+    </header>
+    <Navigation class="item" />
+  </div>
 </div>

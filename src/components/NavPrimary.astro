@@ -22,14 +22,17 @@ import logo from '../assets/logo.png';
     bottom: 0;
     z-index: 9999;
     visibility: hidden;
-    transition: transform 0.4s cubic-bezier(0.46, 0.01, 0.32, 1), visibility 0s linear .4s;
     transform: translateX(-100vw);
   }
+  .nav.js-closed {
+    transform: translateX(-100vw);
+    transition: transform 0.4s cubic-bezier(0.46, 0.01, 0.32, 1), visibility 0s linear .4s;
+  }
   .nav.js-expanded {
+    transition: transform 0.4s cubic-bezier(0.46, 0.01, 0.32, 1);
     transform: translateX(0);
     content-visibility: visible;
     visibility: visible;
-    transition: transform 0.4s cubic-bezier(0.46, 0.01, 0.32, 1);
   }
   .nav-list, .socials-list, .dev-credit {
     display: flex;

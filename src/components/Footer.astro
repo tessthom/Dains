@@ -29,20 +29,25 @@ const currentYear = new Date().getFullYear();
   }
 
   .tel-cta {
-    font-size: var(--font-size-4);
+    font-size: clamp(1.45rem, 0.942rem + 1.375vw, 2rem);
   }
 
-  .outline {
+  .tel-btn {
     outline: 3px solid var(--white);
     width: 70%;
+    max-width: 250px;
     padding: .25em .5em;
 
     font-family: 'Barlow Semi Condensed', sans-serif;
-    font-size: var(--font-size-3);
+    font-size: clamp(1.25rem, 0.942rem + 1.165vw, 1.5rem);
 
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  .tel-btn .icon {
+    width: var(--size-fluid-3);
   }
 
   .social-media-container {
@@ -50,8 +55,8 @@ const currentYear = new Date().getFullYear();
     gap: 1rem;
   }
 
-  .icon {
-    width: 2rem;
+  .social-media-container .icon {
+    width: var(--size-fluid-4);
   }
 
   .nav {
@@ -62,6 +67,19 @@ const currentYear = new Date().getFullYear();
 
   .copyright-container {
     text-align: center;
+  }
+
+  @media (min-width: 1400px) {
+    footer {
+      justify-items: center;
+      padding-top: var(--size-fluid-5);
+      padding-bottom: var(--size-fluid-4);
+    }
+    .tel-cta-container, .nav, .social-media-container, .copyright-container {
+      width: 1400px;
+      max-width: 1400px;
+      padding-inline: var(--space-sm);
+    }
   }
 </style>
 
@@ -74,7 +92,7 @@ const currentYear = new Date().getFullYear();
     </div>
   </div>
 
-  <Navigation variant={'secondary'} isHome={isHome} />
+  <Navigation class="nav" variant={'secondary'} isHome={isHome} />
 
   <div class="social-media-container">
     <a href="https://www.instagram.com/dains_place/" target="_blank">

@@ -10,6 +10,7 @@ const pageTitle = 'Menu';
 	.container {
 		padding-block: var(--space-md);
 		padding-inline: var(--space-sm);
+		margin-bottom: var(--space-md);
 
 		text-align: center;
 
@@ -17,6 +18,10 @@ const pageTitle = 'Menu';
 		flex-direction: column;
 		align-items: center;
 		gap: var(--space-md);
+	}
+
+	h2 {
+		font-size: clamp(4rem, 2.965rem + 4.419vw, 6.5rem);
 	}
 
 	.stack {
@@ -39,25 +44,83 @@ const pageTitle = 'Menu';
 	.availability {
 		font-weight: var(--font-weight-3);
 		line-height: 1rem;
+		width: 90%;
+	}
+
+	@media (min-width: 767px) {
+		/* change main layout to 2 col */
+		.container {
+			padding-block: var(--size-fluid-4);
+			margin-bottom: var(--size-fluid-6);
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-template-columns: minmax(400px, 1fr) 1fr;
+			grid-template-rows: auto;
+			gap: var(--size-fluid-4);
+
+			/* max content width for wider screens */
+			max-width: 1400px;
+			margin-inline: auto;
+		}
+		.container h2, .btns-wrapper, .hours-details, .availability {
+			grid-column: 2 / 3;
+		}
+		.burger-map-container {
+			grid-row: 1 / 5;
+			align-self: start;
+		}
+		.stack.btns-wrapper {
+			gap: var(--size-fluid-3);
+			align-items: center;
+		}
+		.btns-wrapper a {
+			width: 90%;
+			max-width: 500px;
+		}
+		.hours-details {
+			/* text-align: start; */
+			width: 90%;
+			margin: 0 auto;
+			display: flex;
+			flex-direction: column;
+			gap: var(--size-fluid-1);
+		}
+		.hours-details p {
+			font-size: clamp(1.15rem, 0.942rem + 1.165vw, 1.35rem);
+		}
+		.availability {
+			align-self: start;
+			padding-bottom: var(--size-fluid-4);
+			width: 90%;
+			margin-inline: auto;
+			max-width: 500px;
+		}
+		.availability small {
+			font-size: min(.65em, var(--font-size-1));
+		}
 	}
 </style>
 
 <BaseLayout pageTitle={pageTitle}>
 	<div class="container">
 		<h2 class="uppercase">Menus</h2>
-		<div class="stack">
+
+		<div class="stack btns-wrapper">
 			<a class="uppercase cursive drop-border box-white btn drop-on-click" href="/dains-place-food-menu.pdf" target="_blank">Food</a>
 			<a class="uppercase cursive drop-border box-white btn drop-on-click" href="/dains-place-drinks-menu.pdf" target="_blank">Drinks</a>
 		</div>
+
 		<div class="hours-details">
 			<p class="bold">Our kitchen is open every day from 11am to 10pm</p>
 			<p>*Bar open 'til midnight</p>
 		</div>
+
 		<div class="burger-map-container drop-border">
 			<Image src={burgerWithMenuInfo} alt="Our burgers are made with 100% black angus beef, the Dainer was featured on Man versus Food, our kaiser buns are freshly baked, and don't forget the tots." />
 		</div>
+
 		<div class="availability">
-			<small>*Availability and prices subject to change, especially with seasonal beers. Please give us a call for guaranteed up-to-date menu information.</small>
+			<small>*Availability and prices subject to change, especially with seasonal beers. Please swing by or give us a call for guaranteed up-to-date menu information.</small>
 		</div>
 	</div>
 </BaseLayout>
