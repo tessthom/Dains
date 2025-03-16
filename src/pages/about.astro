@@ -17,9 +17,38 @@ const pageTitle = 'About Us';
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: auto;
 	}
+	.portrait {
+		grid-column: 1 / 2;
+		grid-row: 1 / 2;
+	}
+	.attribution {
+		z-index: 999;
+		grid-column: 1 / 2;
+		grid-row: 1 / 2;
+
+		justify-self: start;
+		align-self: end; 
+		color: var(--white);
+		opacity: 70%;
+		margin: var(--size-1) var(--size-2);
+
+		min-width: 100%;
+		display: flex;
+		align-items: center;
+		gap: .25em;
+	}
+	.icon-arrow-out {
+		display: inline-block;
+		height: .85rem;
+		margin-left: -.5rem;
+	}	
 	.intro h2 {
-		margin: var(--space-md) auto;
+		margin: var(--size-fluid-4) auto;
 		/* font-size: 4.75rem; */
 		font-size: clamp(4.5rem, 6rem + 2vw, 8rem);
 		line-height: .8;
@@ -36,8 +65,13 @@ const pageTitle = 'About Us';
 	}
 	.intro blockquote {
 		font-size: 1.25rem;
+		font-size: clamp(1.35rem, 0.942rem + 1.165vw, 1.5rem);
 		font-weight: var(--font-weight-6);
+
+		padding-block: var(--size-fluid-2);
 	}
+
+	/* friends of the bar section */
 	.carousel {
 		/* background-image: url('../assets/gallery/1-friends-sharing-tots-1000.jpg'); */
 		/* background-size: contain;
@@ -84,11 +118,9 @@ const pageTitle = 'About Us';
 		background-color: var(--red);
 		color: var(--background);
 	}
-	blockquote {
+	.customer-quote blockquote {
 		margin-top: var(--space-md);
 		margin-bottom: var(--space-sm);
-	}
-	.customer-quote blockquote {
 		display: block;
 		text-align: center;
 		max-inline-size: 600px;
@@ -107,9 +139,13 @@ const pageTitle = 'About Us';
 		align-items: center;
 		gap: 1ch;
 	}
+
+	/* motto section */
 	.motto {
 		background: var(--red);
 		color: var(--white);
+
+		padding-block: var(--size-fluid-3);
 	}
 	.motto h3 {
 		font-size: 3.375rem;
@@ -139,8 +175,8 @@ const pageTitle = 'About Us';
 	.motto .content {
 		margin-block: var(--space-md);
 	}
-	.content p {
-		margin-bottom: var(--space-sm);
+	.content p:last-of-type {
+		margin-block-start: var(--space-sm);
 	}
 	.smileyface {
 		fill: var(--white);
@@ -165,14 +201,19 @@ const pageTitle = 'About Us';
 		}
 		section.intro {
 			display: grid;
-			grid-template-columns: minmax(200px, 1fr) minmax(350px, 1fr);
+			grid-template-columns: minmax(200px, auto) minmax(300px, 50%);
 			grid-template-rows: auto;
-			column-gap: 1.75rem;
-			row-gap: 2.5rem;
+			column-gap: var(--size-fluid-3);
+			row-gap: var(--size-fluid-1);
 		}
 		.portrait {
 			height: 100%;
 			object-fit: cover;
+			grid-column: 1 / 2;
+			grid-row: 1 / 5;
+		}
+		.attribution {
+			grid-column: 1 / 2;
 			grid-row: 1 / 5;
 		}
 		.intro h2 {
@@ -183,7 +224,9 @@ const pageTitle = 'About Us';
 			margin-bottom: 1rem;
 		}
 		.intro .text {
-			margin-inline: 1em;
+			/* margin-inline: var(--size-fluid-2); */
+			margin-inline: auto;
+			max-inline-size: 45ch;
 		}
 		.intro p:last-of-type {
 			margin-bottom: 3rem;
@@ -235,11 +278,9 @@ const pageTitle = 'About Us';
 		.motto {
 			min-width: 475px;
 			text-align: center;
-			padding-block: var(--space-md);
 		}
 		.motto .drop-border {
 			height: 100%;
-			/* justify-content: start; */
 			align-items: center;
 			padding-block: 0;
 			gap: var(--size-fluid-4);
@@ -299,11 +340,15 @@ const pageTitle = 'About Us';
 	<div class="page-wrapper">
 		<section class="intro bottom-border padded-all">
 			<Image class="portrait" src={dainPortraitIndyWeekly} alt="Dain Phelan standing behind his bar, smiling proudly. Credit: Indy Weekly" />
+			<small class="attribution">Photo by <a class="underline" href="https://indyweek.com/food-and-drink/cheers-dain-phelan-s-place/" target="_blank">Indy Week</a> <svg class="icon icon-arrow-out" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#ffffff" viewBox="0 0 256 256"><path d="M224,104a8,8,0,0,1-16,0V59.32l-66.33,66.34a8,8,0,0,1-11.32-11.32L196.68,48H152a8,8,0,0,1,0-16h64a8,8,0,0,1,8,8Zm-40,24a8,8,0,0,0-8,8v72H48V80h72a8,8,0,0,0,0-16H48A16,16,0,0,0,32,80V208a16,16,0,0,0,16,16H176a16,16,0,0,0,16-16V136A8,8,0,0,0,184,128Z"></path></svg></small>
+
 			<h2 class="uppercase"><span class="nowrap">Meet <span class="cursive">the</span></span> Dainer</h2>
+
 			<p class="body-text text">The man, the myth, the legend... Dain Phelan started making decorations for his dream bar in the 6th grade. A devotee of Cheers' great Same Malone, Dain studied hospitality at Purdue  There are some good ones from the Indy Weekly profile on Dain from back in 2014 where he talks about Sam Malone being an idol and making decorations for the bar starting in 6th grade. How cute is that! Lorem borem ipsum. </p>
 			<blockquote class="quote text" cite="https://indyweek.com/food-and-drink/cheers-dain-phelan-s-place/">"All I ever wanted to do is open a bar."</blockquote>
 			<p class="body-text text">So in 2007, on his 69th birthday, that's exactly what Dain did. In the years since, 754 Ninth Street has become a genuine Durham institution - a lively, welcoming refuge for locals, students, and visitors alike, where you're sure to be greeted with a smile (and a wise crack if we really like ya).</p>
 		</section>
+
 		<section class="friends padded-all">
 			<h3 class="btn btn--solid cursive uppercase">Friends + Fries = Family</h3>
 			<div class="carousel drop-border">
@@ -321,6 +366,7 @@ const pageTitle = 'About Us';
 				<cite>- Scott T. <small>(man of great taste)</small></cite>
 			</div>
 		</section>
+
 		<div class="layout-wrapper">
 			<section class="motto padded-all">
 				<div class="drop-border drop-border--white col padded-all container">

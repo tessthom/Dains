@@ -119,6 +119,10 @@ footer {
   text-transform: uppercase;
 }
 
+.underline, a.underline, a:link.underline, a:visited.underline {
+  text-decoration: underline;
+}
+
 .box-white {
   background-color: var(--white);
 }

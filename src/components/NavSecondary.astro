@@ -28,6 +28,10 @@ const { variant = 'primary', isHome } = Astro.props;
     a {
       font-weight: var(--font-weight-6);
     }
+    .nav {
+      /* TODO: this style must be in this file instead of footer to apply, rework later */
+      grid-column: 1 / 2;
+    }
   }
 
   /* @media (min-width: 767px) {

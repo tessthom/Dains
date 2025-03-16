@@ -35,7 +35,7 @@ const currentYear = new Date().getFullYear();
   .tel-btn {
     outline: 3px solid var(--white);
     width: 70%;
-    max-width: 250px;
+    max-width: 300px;
     padding: .25em .5em;
 
     font-family: 'Barlow Semi Condensed', sans-serif;
@@ -69,11 +69,57 @@ const currentYear = new Date().getFullYear();
     text-align: center;
   }
 
+  .copyright-container small {
+    min-width: max-content;
+  }
+
+  .dev-credit {
+    display: none;
+  }
+
+  @media (min-width: 767px) {
+    footer {
+      grid-template-columns: auto;
+      padding-block-start: var(--size-fluid-5);
+      padding-block-end: var(--size-fluid-4);
+      gap: var(--size-fluid-3);
+    }
+    .tel-cta-container {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+    }
+    .nav {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+    }
+    .social-media-container {
+      grid-column: 1 / 2;
+      grid-row: 3 / 4;
+      /* compensate for bit of whitespace in SVGs */
+    }
+    .copyright-container {
+      grid-column: 2 / 3;
+      grid-row: 3 / 4;
+      
+      display: flex;
+      flex-direction: row;
+      justify-content: end;
+      align-items: end;
+      gap: var(--size-fluid-3);
+    }
+    .dev-credit {
+      display: block;
+    }
+    .copyright-container small {
+      white-space: nowrap;
+    }
+  }
+
   @media (min-width: 1400px) {
     footer {
       justify-items: center;
-      padding-top: var(--size-fluid-5);
-      padding-bottom: var(--size-fluid-4);
+      /* padding-block-start: var(--size-fluid-5); */
+      padding-block-end: var(--size-fluid-4);
     }
     .tel-cta-container, .nav, .social-media-container, .copyright-container {
       width: 1400px;
@@ -104,6 +150,7 @@ const currentYear = new Date().getFullYear();
   </div>
 
   <div class="copyright-container">
+    <small class="dev-credit uppercase">Website designed and built by <a class="underline" href="https://tessthomas.com/" target="_blank">Tess Thomas</a></small>
     <small class="uppercase">Copyright &copy; Dain's Place {currentYear}</small>
   </div>
 </footer>
