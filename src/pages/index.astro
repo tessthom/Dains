@@ -14,6 +14,7 @@ import perogies from '../assets/burg-fries-left.jpeg';
 import foodFeature from '../assets/mozzarella-triangles-with-twinkles-cropped.jpg';
 
 const pageTitle = 'Home';
+const description = `Welcome to the best neighborhood bar in Durham! Located on 9th Street, we're serving up fantastic pub fare - from juicy burgers to crispy tater tots to ice cold craft beers and refreshing cocktails. Pull up a stool and make Dain's Place your place!`;
 ---
 <style>
 	section {
@@ -51,8 +52,6 @@ const pageTitle = 'Home';
 		color: var(--white);
 		margin: 0 auto;
 		margin-top: -.25ch; /* offset font's stubborn vertical alignment */
-		/* color: #fbd0a2; */
-		/* text-shadow: -5px -5px 15px rgba(0, 0, 0, 0.15); */
 	}
 
 	.dainer {
@@ -327,7 +326,7 @@ const pageTitle = 'Home';
 
 </style>
 
-<BaseLayout pageTitle={pageTitle} isHome={true}>
+<BaseLayout pageTitle={pageTitle} isHome={true} description={description}>
 	<section class="bottom-border padded-all hero-wrapper">
 		<div class="hero">
 			<h2 class="uppercase">Dain's Place</h2>

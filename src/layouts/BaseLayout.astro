@@ -1,4 +1,5 @@
 ---
+import Head from '../components/Head.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
@@ -20,17 +21,19 @@ import '@fontsource/barlow-semi-condensed/900.css';
 import '@fontsource/permanent-marker';
 import '@fontsource-variable/roboto-condensed'; // supports weights 100-900
 
-const { pageTitle, isHome = false } = Astro.props;
+const { pageTitle, description = '', isHome = false } = Astro.props;
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<!-- <link rel="icon" type="image/svg+xml" href="/favicon.png" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
+		<title>{pageTitle}</title> -->
+		<Head pageTitle={pageTitle} description={description} />
 	</head>
+
 	<body>
 		<Header />
 
