@@ -1,7 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import siteData from '../data/siteData.json';
 
-const pageTitle = 'Contact';
+const pageData = siteData.seo.contact;
 ---
 <style>
 	.container, form {
@@ -79,7 +80,7 @@ const pageTitle = 'Contact';
 	}
 </style>
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout seo={pageData}>
 	<div class="container">
 		<h2 class="uppercase">Get in Touch</h2>
 
@@ -94,6 +95,6 @@ const pageTitle = 'Contact';
 			<button type="submit" class="btn cursive drop-border drop-on-click">Send Message</button>
 		</form>
 
-		<small class="detail">If you've got a burgermergency, please give us a call directly at: <span class="bold">(919) 416-8800</span>.</small>
+		<small class="detail">If you've got a burgermergency, please give us a call directly at: <span class="bold">{siteData.phone}</span>.</small>
 	</div>
 </BaseLayout>

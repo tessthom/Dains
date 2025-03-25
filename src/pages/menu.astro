@@ -1,11 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import siteData from '../data/siteData.json';
 
 import { Image } from 'astro:assets';
 import burgerWithMenuInfo from '../assets/burger-map-1000.webp';
 
-const pageTitle = 'Menu';
-const description = `Voted best burger in Durham year after year, Dain's serves fresh, never frozen, 100% black angus beef, the best cheesesteak you'll find outside of Philly, killer kosher all-beef hotdogs, housemade mozzarella trianges, cheesy perogies, crispy tater tots, golden fries and more. Even our salad is a banger!`;
+const pageData = siteData.seo.menu;
 ---
 <style>
 	.container {
@@ -112,7 +112,7 @@ const description = `Voted best burger in Durham year after year, Dain's serves 
 	}
 </style>
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout seo={pageData}>
 	<div class="container">
 		<h2 class="uppercase">Menus</h2>
 
@@ -122,8 +122,8 @@ const description = `Voted best burger in Durham year after year, Dain's serves 
 		</div>
 
 		<div class="hours-details">
-			<p class="bold">Our kitchen is open every day from 11am to 10pm</p>
-			<p>*Bar open 'til midnight</p>
+			<p class="bold">Our kitchen is open every day from {siteData.hours.kitchen.open} to {siteData.hours.kitchen.close}</p>
+			<p>*Bar open 'til {siteData.hours.bar.closeLongForm}</p>
 		</div>
 
 		<div class="burger-map-container drop-border">
@@ -131,7 +131,7 @@ const description = `Voted best burger in Durham year after year, Dain's serves 
 		</div>
 
 		<div class="availability">
-			<small>*Availability and prices subject to change, especially with seasonal beers. Please swing by or give us a call for guaranteed up-to-date menu information.</small>
+			<small>*Availability and prices subject to change, especially with seasonal drinks. Please swing by or give us a call for guaranteed up-to-date menu information.</small>
 		</div>
 	</div>
 </BaseLayout>

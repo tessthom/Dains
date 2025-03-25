@@ -1,11 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import siteData from '../data/siteData.json';
 
 import { Image } from 'astro:assets';
 import dainsFromStreet from '../assets/barfront.webp';
 import photoWithSticker from '../assets/building-with-sticker.jpg';
 
-const pageTitle = 'Location';
+const pageData = siteData.seo.location;
 ---
 <style>
 	.container {
@@ -140,7 +141,7 @@ const pageTitle = 'Location';
 	}
 </style>
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout seo={pageData}>
 	<div class="container">
 		<h2 class="uppercase heading">Come Get the Munchies!</h2>
 
@@ -171,9 +172,9 @@ const pageTitle = 'Location';
 			<p>We're open:</p>
 			<div class="spacer-wrapper">
 				<p class="days">Monday - Sunday</p>
-				<p class="time">11AM - 12AM</p>
+				<p class="time uppercase">{siteData.hours.bar.open} - {siteData.hours.bar.close}</p>
 			</div>
-			<p class="kitchen">*Kitchen 'til 10pm</p>
+			<p class="kitchen">*Kitchen 'til {siteData.hours.kitchen.close}</p>
 		</section>
 	</div>
 

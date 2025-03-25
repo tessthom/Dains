@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import siteData from '../data/siteData.json'; // access any data that isn't page-specific SEO data from this import
 import ScrollingBanner from '../components/Banner.astro';
 
 import { Image } from 'astro:assets';
@@ -13,8 +14,7 @@ import yuengling from '../assets/hotdog-tots-cropped.jpeg';
 import perogies from '../assets/burg-fries-left.jpeg';
 import foodFeature from '../assets/mozzarella-triangles-with-twinkles-cropped.jpg';
 
-const pageTitle = 'Home';
-const description = `Welcome to the best neighborhood bar in Durham! Located on 9th Street, we're serving up fantastic pub fare - from juicy burgers to crispy tater tots to ice cold craft beers and refreshing cocktails. Pull up a stool and make Dain's Place your place!`;
+const pageData = siteData.seo.home; // pull page-specific SEO data to pass into BaseLayout.astro
 ---
 <style>
 	section {
@@ -354,10 +354,10 @@ const description = `Welcome to the best neighborhood bar in Durham! Located on 
 	}
 </style>
 
-<BaseLayout pageTitle={pageTitle} isHome={true} description={description}>
+<BaseLayout seo={pageData} isHome={true} >
 	<section class="bottom-border padded-all hero-wrapper">
 		<div class="hero">
-			<h2 class="uppercase">Dain's Place</h2>
+			<h2 class="uppercase">{siteData.businessName}</h2>
 			<div class="dainer-wrapper">
 				<Image class="dainer desktop" alt="dainer burger" src={burger} />
 				<Image class="dainer" alt="dainer burger" src={burger} />
@@ -397,10 +397,10 @@ const description = `Welcome to the best neighborhood bar in Durham! Located on 
 			<div class="hours-button uppercase">
 					<h3 class="cursive">We're open</h3>
 					<div class="no-gap">
-						<p class="hours">11am - 12am</p>
+						<p class="hours">{siteData.hours.bar.open} - {siteData.hours.bar.close}</p>
 						<p class="days">Mon - Sun</p>
 					</div>
-					<small class="cursive">*Kitchen 'til 10pm</small>
+					<small class="cursive">*Kitchen 'til {siteData.hours.kitchen.close}</small>
 			</div>
 		</div>
 		<div class="panel-right">

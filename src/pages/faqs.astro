@@ -1,8 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import siteData from '../data/siteData.json';
 
+const pageData = siteData.seo.faqs;
 const jurgensStreak = new Date().getFullYear() - 2007;
-const pageTitle = 'FAQs'
 ---
 <style>
 	.container {
@@ -94,7 +95,7 @@ const pageTitle = 'FAQs'
 	}
 </style>
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout seo={pageData}>
   <div class="container">
 		<h2>FAQs</h2>
 			<div class="accordion">
@@ -146,7 +147,6 @@ const pageTitle = 'FAQs'
 					<summary>Do you have gluten free buns?</summary><div class="spacer"></div>
 					<p>We don't carry gluten free buns at this time, but we're happy to serve any sandwich bunless. It'll even come out on a fancy plate!</p>
 				</details>
-				<!-- TODO: Confirm defibrillator. Old menu says it was the Dainer but the internet disagrees? -->
 				<details>
 					<summary>Were y'all really on Man v. Food???</summary><div class="spacer"></div>
 					<p>Oh yeah. Richman enjoyed our Defibrillator burger, which is topped with bacon, sweet beef chili, cheddar cheese, coleslaw, and yes you're reading this right - a hotdog. Named one of <a class="link" href="https://www.mashed.com/1238720/the-best-burgers-ever-seen-on-man-v-food/" target="_blank">"The Best Burgers Ever Seen on Man V. Food" <svg class="icon icon__external-link" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M224,104a8,8,0,0,1-16,0V59.32l-66.33,66.34a8,8,0,0,1-11.32-11.32L196.68,48H152a8,8,0,0,1,0-16h64a8,8,0,0,1,8,8Zm-40,24a8,8,0,0,0-8,8v72H48V80h72a8,8,0,0,0,0-16H48A16,16,0,0,0,32,80V208a16,16,0,0,0,16,16H176a16,16,0,0,0,16-16V136A8,8,0,0,0,184,128Z"></path></svg></a> by Mashed, the Defibrillator aint for the faint of heart, but boy is it delicious.</p>
