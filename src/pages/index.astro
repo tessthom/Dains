@@ -10,8 +10,8 @@ import tot1 from '../assets/tot-1.webp';
 import tot2 from '../assets/tot-2.webp';
 import tot3 from '../assets/tot-3.webp';
 import tot4 from '../assets/tot-4.webp';
-import yuengling from '../assets/hotdog-tots-cropped.jpeg';
-import perogies from '../assets/burg-fries-left.jpeg';
+import leftPanel from '../assets/burg-fries-left.jpeg';
+import rightPanel from '../assets/hotdog-tots-cropped.jpeg';
 import foodFeature from '../assets/mozzarella-triangles-with-twinkles-cropped.jpg';
 
 const pageData = siteData.seo.home; // pull page-specific SEO data to pass into BaseLayout.astro
@@ -324,7 +324,7 @@ const pageData = siteData.seo.home; // pull page-specific SEO data to pass into 
 		}
 		.buttons-collage {
 			height: 100%;
-			background-image: url('../assets/buttons-collage-1000.jpg');
+			background-image: url('../assets/buttons-collage-cropped.jpeg');
 		}
 		.panel-left, .panel-right {
 			display: block;
@@ -391,7 +391,7 @@ const pageData = siteData.seo.home; // pull page-specific SEO data to pass into 
 
 	<section class="padded-all hours-section">
 		<div class="panel-left">
-			<Image class="perogies" alt="potato and cheese perogies" src={perogies} />
+			<Image class="leftPanel" alt="burger with loaded fries and a side of ranch" src={leftPanel} />
 		</div>
 		<div class="buttons-collage">
 			<div class="hours-button uppercase">
@@ -404,7 +404,7 @@ const pageData = siteData.seo.home; // pull page-specific SEO data to pass into 
 			</div>
 		</div>
 		<div class="panel-right">
-			<Image class="yuengling" alt="pint of yuengling" src={yuengling} />
+			<Image class="rightPanel" alt="hotdog carolina style with tots" src={rightPanel} />
 		</div>
 	</section>
 

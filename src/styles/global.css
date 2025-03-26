@@ -196,7 +196,7 @@ footer {
 /* Layout */
 h1 {
   position: absolute;
-  left: -100%;
+  left: -200%;
 }
 
 main {

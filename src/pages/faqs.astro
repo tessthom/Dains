@@ -45,14 +45,14 @@ const jurgensStreak = new Date().getFullYear() - 2007;
 		margin-block-end: 1em;
 	}
 
-	details > p {
+	details p {
 		height: 0px;
 		transition: height 300ms ease;
 		overflow: clip;
 	}
 
-	details[open] > p {
-		height: auto;
+	details[open] p {
+		height: max-content;
 	}
 
 	summary {
@@ -105,7 +105,7 @@ const jurgensStreak = new Date().getFullYear() - 2007;
 				</details>
 				<details>
 					<summary>Are y'all family-friendly?</summary><div class="spacer"></div>
-					<p>Dain's welcomes folks of all ages while the kitchen's open. We've got a high chair, booster seat, and keep a bucket of chalk handy for sidewalk art on the patio.</p>
+					<p>Dain's welcomes folks of all ages while the kitchen's open. We've got a high chair, booster seat, and keep a bucket of chalk handy for sidewalk art on the patio. *After the kitchen closes at {siteData.hours.kitchen.close}, the bar is technically 21+, per NC law.</p>
 				</details>
 				<details>
 					<summary>Is the patio dog-friendly?</summary><div class="spacer"></div>
@@ -116,11 +116,19 @@ const jurgensStreak = new Date().getFullYear() - 2007;
 					<p>In the spirit of keeping things simple we don't have a separate kids menu, but we sure do have lots of kid-friendly options. Hot dogs, grilled cheeses, and nuggets o' chicken are especially popular. Ooh and Oreos & milk. Can't forget the Oreos & milk.</p>
 				</details>
 				<details>
+					<summary>What about chicken wings?</summary><div class="spacer"></div>
+					<p>We serve delicious, all white meat "nuggets o' chicken", aka chicken tenders, plain or tossed in buffalo sauce, with your choice of dipping sauces. If you're dead set on bone-in wings, check out our sister restaurants - <a class="link" href="https://www.heavenlybuffaloes.com/" target="_blank">Heavenly Buffaloes <svg class="icon icon-arrow-out icon__external-link" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#ffffff" viewBox="0 0 256 256"><path d="M224,104a8,8,0,0,1-16,0V59.32l-66.33,66.34a8,8,0,0,1-11.32-11.32L196.68,48H152a8,8,0,0,1,0-16h64a8,8,0,0,1,8,8Zm-40,24a8,8,0,0,0-8,8v72H48V80h72a8,8,0,0,0,0-16H48A16,16,0,0,0,32,80V208a16,16,0,0,0,16,16H176a16,16,0,0,0,16-16V136A8,8,0,0,0,184,128Z"></path></svg></a>. The original HB shack is right around the corner from us and open late for all your saucy cravings.</p>
+				</details>
+				<details>
 					<summary>Will the game be on?</summary><div class="spacer"></div>
 					<p>Dain's Place has 4 artfully placed HD bigscreen TVs and our staff will gladly accomodate game requests. Bonus points if you know what network you're looking for. *We're a Philly bar with a side of Purdue pride, so when the birds or Boilermakers are playing they get top billing. Speaking of college ball, we're a hoppin' spot for Duke games, being down the road from campus and all (lighter shades of blue are welcome). Come cheer with us!</p>
 				</details>
 				<details>
-					<summary>Do you have any non-alcoholic beverage options, other than sodas and milk?</summary><div class="spacer"></div>
+					<summary>Do you have WiFi?</summary><div class="spacer"></div>
+					<p>Sure do. The password is our phone number, no dots or dashes, which can be found on the food menu and is posted on the walls.</p>
+				</details>
+				<details>
+					<summary>Any non-alcoholic beverage options, other than sodas and milk?</summary><div class="spacer"></div>
 					<p>We've got lots! Our drinks menu offers a growing array of delicious N/A selections, from ciders to beers in a variety of styles to spritzes.</p>
 				</details>
 				<details>
@@ -129,7 +137,7 @@ const jurgensStreak = new Date().getFullYear() - 2007;
 				</details>
 				<details>
 					<summary>Is the hotdog all beef?</summary><div class="spacer"></div>
-					<p>Yes indeed. We use the finest kosher, all-beef hot dogs. Seriously, they're really, really good hot dogs.</p>
+					<p>Yes indeed. We use the finest kosher, all-beef hot dogs. Seriously. They're really, really good hot dogs.</p>
 				</details>
 				<details>
 					<summary>What if I'm a vegetarian?</summary><div class="spacer"></div>

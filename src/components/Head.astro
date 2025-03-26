@@ -21,7 +21,7 @@ const { seo } = Astro.props; // SEO data passed in from each page file
 <meta property="og:url" content={`${siteData.baseUrl}${seo.path}`}>
 
 <!-- Canonical URL -->
-<link rel="canonical" href=`${siteData.baseUrl}${seo.path}` />
+<link rel="canonical" href=`${siteData.baseUrl}${seo.path}/` />
 
 <!-- Favicon -->
 <link rel="icon" type="image/png+xml" href="/favicon.png" />
