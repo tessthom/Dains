@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import siteData from '../data/siteData.json';
 
 import { Image } from 'astro:assets';
-import dainPortraitIndyWeekly from '../assets/dain-indy-weekly.webp';
+import dainPortraitIndyWeek from '../assets/dain-indy-week-1000.jpg';
 import friendsSharingTots from '../assets/gallery/1-friends-sharing-tots-1000.webp';
 import dainsPlaceLovesYouSign from '../assets/dains-loves-you-board.webp';
 import greatDayAtDains from '../assets/great-day-at-dains.jpg';
@@ -25,7 +25,15 @@ const pageData = siteData.seo.about;
 		grid-template-rows: auto;
 		gap: var(--space-sm);
 	}
-	.intro .grid-wrapper {
+	.intro--left {
+		grid-column: 1 / 2;
+		grid-row: 1 / 2;
+
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(2, auto);
+	}
+	.intro--right {
 		justify-content: center;
 	}
 	.portrait {
@@ -40,8 +48,8 @@ const pageData = siteData.seo.about;
 		justify-self: start;
 		align-self: end; 
 		color: var(--white);
-		opacity: 80%;
-		margin: var(--size-1) var(--size-2);
+		opacity: 70%;
+		margin: 0.25em 0.5em;
 
 		min-width: 100%;
 		display: flex;
@@ -53,7 +61,7 @@ const pageData = siteData.seo.about;
 		height: .85rem;
 		margin-left: -.5rem;
 	}	
-	.intro .grid-wrapper {
+	.intro--right {
 		display: grid;
 		grid-template-columns: auto;
 		grid-template-rows: auto;
@@ -79,8 +87,9 @@ const pageData = siteData.seo.about;
 		font-size: 1.25rem;
 		font-size: clamp(1.45rem, 0.942rem + 1.265vw, 1.65rem);
 		font-weight: var(--font-weight-6);
+		line-height: 2.25;
 
-		padding-block: var(--size-1);
+		/* padding-block: var(--size-fluid-1); */
 	}
 
 	/* friends of the bar section */
@@ -208,35 +217,18 @@ const pageData = siteData.seo.about;
 			grid-template-columns: 1fr;
 			grid-template-rows: repeat(3, auto);
 		}
-		.intro {
+		section.intro {
 			grid-row: 1 / 2;
 			border-bottom: none;
-		}
-		.friends {
-			grid-row: 3 / 4;
-		}
-		section.intro {
 			display: grid;
-			grid-template-columns: minmax(150px, auto) minmax(300px, 52%);
+			grid-template-columns: minmax(150px, 40%) minmax(50%, 1fr);
 			grid-template-rows: auto;
-			column-gap: var(--size-fluid-2);
-			/* row-gap: var(--size-fluid-1); */
+			column-gap: var(--size-fluid-1);
 			row-gap: 0;
 			padding-block-end: var(--space-sm);
 		}
 		.portrait {
-			height: 100%;
-			max-height: 875px;
 			object-fit: cover;
-			grid-column: 1 / 2;
-			grid-row: 1 / 3;
-			align-self: start;
-		}
-		section.intro .grid-wrapper {
-			grid-row: 1 / 3;
-			display: flex;
-			flex-direction: column;
-			gap: var(--size-3);
 		}
 		.attribution {
 			grid-column: 1 / 2;
@@ -246,34 +238,32 @@ const pageData = siteData.seo.about;
 			margin-inline: 0;
 			font-size: .85rem;
 		}
+		.intro--right {
+			grid-column: 2 / 3;
+			grid-row: 1 / 3;
+			
+			display: flex;
+			flex-direction: column;
+			gap: var(--size-2);
+		}
 		.intro .icon-arrow-out {
 			fill: var(--red);
 		}
 		.intro h2 {
-			/* grid-column: 2 / 3;
-			grid-row: 1 / 2; */
-			/* align-self: start; */
 			margin-top: -.125ch;
 			margin-bottom: 1rem;
 		}
 		.intro .text {
 			margin-inline: auto;
-			/* max-inline-size: 45ch; */
-		}
-		.intro p:last-of-type {
-			/* margin-bottom: 3rem; */
-			/* grid-column: 2 / 3; */
 		}
 		.intro .quote {
 			margin-block: 0;
 			padding-inline: 1em;
-			padding-block: 0;
-			/* font-size: clamp(1.5rem, 1rem + 1.25vw, 2rem); */
-			font-size: clamp(1.25rem, 0.942rem + 1.25vw, 1.65rem);
 		}
-
+		
 		/* friends section */
 		.friends {
+			grid-row: 3 / 4;
 			width: 100%;
 			display: flex;
 			flex-direction: column;
@@ -301,15 +291,14 @@ const pageData = siteData.seo.about;
 		.customer-quote blockquote {
 			margin-block: 0;
 		}
-
-		.layout-wrapper {
-			width: 100vw;
-		}
 	}
 
 	@media (min-width: 710px) {
+		section.intro {
+			column-gap: var(--space-md);
+		}
 		/* shift bottom section layout only when screen wider than img max */
-		.layout-wrapper {
+		.motto-wrapper {
 			display: grid;
 			grid-template-columns: 50% auto;
 			grid-template-rows: 1fr;
@@ -326,7 +315,7 @@ const pageData = siteData.seo.about;
 		.motto .drop-border {
 			height: 100%;
 			align-items: center;
-			padding-block: 0;
+			padding-block: var(--space-sm);
 			gap: var(--space-sm);
 		}
 		.motto h3 {
@@ -365,21 +354,28 @@ const pageData = siteData.seo.about;
 		section.intro {
 			margin-block-start: var(--space-sm);
 		}
-		.intro .text {
-			max-inline-size: 70ch;
+		.intro--left {
+			justify-self: end;
 		}
-		.layout-wrapper {
+		.intro--right {
+			justify-self: start;
+			gap: var(--size-fluid-1);
+		}
+		.intro .text {
+			max-inline-size: 75ch;
+		}
+		.motto-wrapper {
 			margin-block-start: var(--space-md);
 			padding-inline: var(--space-sm);
-			/* max-height: 100vh; */
 		}
 		section.friends {
-			/* margin-block: var(--space-md); */
 			display: grid;
 			grid-template-columns: minmax(200px, 1fr) minmax(350px, 1fr);
 			grid-template-rows: auto;
 			column-gap: 1.75rem;
 			row-gap: 2.5rem;
+
+			padding-block-end: var(--space-lg);
 		}
 		.friends h3 {
 			grid-column: 1 / 3;
@@ -395,7 +391,7 @@ const pageData = siteData.seo.about;
 			gap: 1rem;
 		}
 		/* Motto section */
-		.layout-wrapper {
+		.motto-wrapper {
 			grid-template-columns: auto 1fr auto;
 		}
 		.motto {
@@ -418,22 +414,24 @@ const pageData = siteData.seo.about;
 <BaseLayout seo={pageData}>
 	<div class="page-wrapper">
 		<section class="intro bottom-border padded-all">
-			<Image class="portrait" src={dainPortraitIndyWeekly} alt="Dain Phelan standing behind his bar, smiling proudly. Credit: Indy Weekly" />
-			<small class="attribution">Photo by <a class="underline" href="https://indyweek.com/food-and-drink/cheers-dain-phelan-s-place/" target="_blank">Indy Week</a> <svg class="icon icon-arrow-out" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#ffffff" viewBox="0 0 256 256"><path d="M224,104a8,8,0,0,1-16,0V59.32l-66.33,66.34a8,8,0,0,1-11.32-11.32L196.68,48H152a8,8,0,0,1,0-16h64a8,8,0,0,1,8,8Zm-40,24a8,8,0,0,0-8,8v72H48V80h72a8,8,0,0,0,0-16H48A16,16,0,0,0,32,80V208a16,16,0,0,0,16,16H176a16,16,0,0,0,16-16V136A8,8,0,0,0,184,128Z"></path></svg></small>
+			<div class="intro--left">
+				<Image class="portrait" src={dainPortraitIndyWeek} alt="Dain Phelan standing behind his bar, smiling proudly. Credit: Indy Weekly" />
+				<small class="attribution">Photo by Jeremy M. Lange for the INDY <a class="underline" href="http://indyweek.com/" target="_blank">(Indy Week)</a> <svg class="icon icon-arrow-out" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#ffffff" viewBox="0 0 256 256"><path d="M224,104a8,8,0,0,1-16,0V59.32l-66.33,66.34a8,8,0,0,1-11.32-11.32L196.68,48H152a8,8,0,0,1,0-16h64a8,8,0,0,1,8,8Zm-40,24a8,8,0,0,0-8,8v72H48V80h72a8,8,0,0,0,0-16H48A16,16,0,0,0,32,80V208a16,16,0,0,0,16,16H176a16,16,0,0,0,16-16V136A8,8,0,0,0,184,128Z"></path></svg></small>
+			</div>
 
-			<div class="grid-wrapper">
+			<div class="grid-wrapper intro--right">
 				<h2 class="uppercase"><span class="nowrap">Meet <span class="cursive">the</span></span> Dainer</h2>
-				<p class="body-text text">The man, the myth, the legend... Dain Phelan started making decorations for his dream bar in the 6th grade. An early devotee of Cheers' iconic Sam Malone, Dain was determined to create his own little corner of the world where everybody really does know your name. He prepared by studying hospitality at Purdue (go Boilermakers!) and working every restaurant job he could find, from dishwasher to manager. In 2007, on his 28th birthday, his dream was realized as he opened the doors to Dain's Place.</p>
+				<p class="body-text text">The man, the myth, the legend... Dain Phelan started making decorations for his dream bar in the 6th grade. An early devotee of Cheers' iconic Sam Malone, Dain was determined to create his own little corner of the world where everybody really does know your name. He went on to study hospitality at Purdue (go Boilermakers!) and worked every restaurant job he could find, from dishwasher to manager. Finally in 2007, on his 28th birthday, his dream was realized as he opened the doors to Dain's Place.</p>
 				<blockquote class="quote text" cite="https://indyweek.com/food-and-drink/cheers-dain-phelan-s-place/">"All I ever wanted to do is open a bar."</blockquote>
-				<p class="body-text text">Shortly afterward, Dain had the incredible luck of meeting his Burger Queen - the inimitable chef Jenn. A culinary whiz and and all around radiant human, Jenn is the tater to his tot. The two realized they'd found lightning in a bottle and hitched their proverbial waggons, pouring their love into Dain's Place and raising two sons, a few goats, and some chickens together.</p>
-				<p class="body-text text">Thanks to the Phelan's contagious hospitality, the hard work of our amazing team behind the bar and in the kitchen, and the enthusiasm of our beloved customers, 754 Ninth Street has become a genuine Durham institution. We're proud to be a lively, welcoming refuge for locals, Duke students, and visitors alike, where you're sure to be greeted with a smile (and a wise crack if we really like ya).</p>
+				<p class="body-text text">Shortly afterward, Dain had the incredible luck of meeting his Burger Queen - the inimitable chef Jenn. A culinary whiz and and all around radiant human, Jenn was the tater to his tot. The two realized they'd found lightning in a bottle and hitched their proverbial waggons, pouring their love into Dain's Place and raising two sons, a few goats, and some chickens together.</p>
+				<p class="body-text text">Thanks to the Phelan's contagious hospitality, the hard work of our amazing team behind the bar and in the kitchen, and the enthusiasm of our beloved patrons, 754 Ninth Street has become a genuine Durham institution. We're proud to be a lively, welcoming refuge for locals, students, and visitors alike, where you're sure to be greeted with a smile (and a wise crack if we really like ya).</p>
 			</div>
 		</section>
 
 		<section class="friends padded-all">
 			<h3 class="btn btn--solid cursive uppercase">Friends + Fries = Family</h3>
 			<div class="carousel drop-border">
-				<Image class="slide" src={friendsSharingTots} alt="Friends Sean and Scott sharing tater tots at the bar" />
+				<Image class="slide" src={friendsSharingTots} alt="Friends Sean and Scott, Duke Law and Fuqua alums, sharing tater tots at the bar" />
 				<div class="circle-wrapper back">
 					<svg class="caret caret__back" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"></path></svg>
 				</div>
@@ -443,11 +441,11 @@ const pageData = siteData.seo.about;
 			</div>
 			<div class="customer-quote col">
 				<blockquote>“After 2 days of not eating in preparation for a medical procedure, the first thought I had after awaking from anesthesia was not of my wife or my child, but how I was going to eat the %*$# out of a burger and fries at Dain's afterwards”</blockquote>
-				<cite>- Scott T. <small>(man of great taste)</small></cite>
+				<cite>- Scott T. <small>(Fuqua alum & man of great taste)</small></cite>
 			</div>
 		</section>
 
-		<div class="layout-wrapper">
+		<div class="motto-wrapper">
 			<section class="motto padded-all">
 				<div class="drop-border drop-border--white col padded-all container">
 					<h3 class="uppercase col">
@@ -457,7 +455,7 @@ const pageData = siteData.seo.about;
 					</h3>
 					<div class="content">
 						<p class="body-text">It's been our motto since the start, and we mean it! When you walk through our doors we want you to feel at home - like you just rolled up to your high school BFF's house. Their parents are out of town, all your friends are here, your team is up by 2 touchdowns, and it's basement party time, babyyyy.</p>
-						<p class="body-text"> *In this hypothetical your BFF’s basement has bangin’ pub food, a full bar with classic cocktails, craft brews and daily specials, 4 HD TVs, friendly servers, great tunes, free Wi-Fi, and a patio, just to be clear. <span><svg class="smileyface" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216ZM80,108a12,12,0,1,1,12,12A12,12,0,0,1,80,108Zm104,0a8,8,0,0,1-8,8H152a8,8,0,0,1,0-16h24A8,8,0,0,1,184,108Zm-9.08,48c-10.29,17.79-27.39,28-46.92,28s-36.63-10.2-46.93-28a8,8,0,1,1,13.86-8c7.46,12.91,19.2,20,33.07,20s25.61-7.1,33.08-20a8,8,0,1,1,13.84,8Z"></path></svg></span></p>
+						<p class="body-text"> *In this hypothetical your BFF’s basement has bangin’ pub food, a full bar with classic cocktails, craft brews and daily specials, 4 HD TVs, friendly servers, great tunes, free Wi-Fi and a patio, just to be clear. <span><svg class="smileyface" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216ZM80,108a12,12,0,1,1,12,12A12,12,0,0,1,80,108Zm104,0a8,8,0,0,1-8,8H152a8,8,0,0,1,0-16h24A8,8,0,0,1,184,108Zm-9.08,48c-10.29,17.79-27.39,28-46.92,28s-36.63-10.2-46.93-28a8,8,0,1,1,13.86-8c7.46,12.91,19.2,20,33.07,20s25.61-7.1,33.08-20a8,8,0,1,1,13.84,8Z"></path></svg></span></p>
 					</div>
 				</div>
 			</section>

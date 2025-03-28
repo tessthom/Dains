@@ -14,6 +14,12 @@ const currentYear = new Date().getFullYear();
     margin: 0;
     padding-block: 2rem;
 
+  }
+  
+  .content-wrapper {
+    max-width: var(--max-content-width);
+    margin-inline: auto;
+
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
@@ -97,7 +103,6 @@ const currentYear = new Date().getFullYear();
     .social-media-container {
       grid-column: 1 / 2;
       grid-row: 3 / 4;
-      /* compensate for bit of whitespace in SVGs */
     }
     .copyright-container {
       grid-column: 2 / 3;
@@ -111,7 +116,10 @@ const currentYear = new Date().getFullYear();
       gap: var(--size-fluid-3);
     }
     .dev-credit {
-      display: block;
+      display: inline-block;
+    }
+    .dev-credit a:hover {
+      color: var(--blue);
     }
     .copyright-container small {
       white-space: nowrap;
@@ -134,27 +142,26 @@ const currentYear = new Date().getFullYear();
 </style>
 
 <footer class="padded-all">
-  <div class="tel-cta-container">
-    <p class="uppercase cursive tel-cta">Call to order carryout</p>
-    <div class="outline tel-btn">
-      <a href="tel:+9194168800">{siteData.phone}<svg class="icon phone" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><path d="M152,48a78.61,78.61,0,0,1,56,56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><path d="M144,80c16.52,4.42,27.58,15.48,32,32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><path d="M156.39,153.34a8,8,0,0,1,7.59-.69l47.16,21.13a8,8,0,0,1,4.8,8.3A48.33,48.33,0,0,1,168,224,136,136,0,0,1,32,88,48.33,48.33,0,0,1,73.92,40.06a8,8,0,0,1,8.3,4.8l21.13,47.2a8,8,0,0,1-.66,7.53L81.32,125a7.93,7.93,0,0,0-.54,7.81c8.27,16.93,25.77,34.22,42.75,42.41a7.92,7.92,0,0,0,7.83-.59Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg></a>
-      
+  <div class="content-wrapper">
+    <div class="tel-cta-container">
+      <p class="uppercase cursive tel-cta">Call to order carryout</p>
+      <div class="outline tel-btn">
+        <a href="tel:+9194168800">{siteData.phone}<svg class="icon phone" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><path d="M152,48a78.61,78.61,0,0,1,56,56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><path d="M144,80c16.52,4.42,27.58,15.48,32,32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><path d="M156.39,153.34a8,8,0,0,1,7.59-.69l47.16,21.13a8,8,0,0,1,4.8,8.3A48.33,48.33,0,0,1,168,224,136,136,0,0,1,32,88,48.33,48.33,0,0,1,73.92,40.06a8,8,0,0,1,8.3,4.8l21.13,47.2a8,8,0,0,1-.66,7.53L81.32,125a7.93,7.93,0,0,0-.54,7.81c8.27,16.93,25.77,34.22,42.75,42.41a7.92,7.92,0,0,0,7.83-.59Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg></a>
+    
+      </div>
     </div>
-  </div>
-
-  <Navigation class="nav" variant={'secondary'} isHome={isHome} />
-
-  <div class="social-media-container">
-    <a href="https://www.instagram.com/dains_place/" target="_blank">
-      <svg class="icon icon--white instagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><circle cx="128" cy="128" r="40" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="16"/><rect x="32" y="32" width="192" height="192" rx="48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><circle cx="180" cy="76" r="12" fill="currentColor"/></svg>
-    </a>
-    <a href="https://www.facebook.com/dainsplacedurham/" target="_blank">
-      <svg class="icon icon-white facebook" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><circle cx="128" cy="128" r="96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><path d="M168,88H152a24,24,0,0,0-24,24V224" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="96" y1="144" x2="160" y2="144" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
-    </a>
-  </div>
-
-  <div class="copyright-container">
-    <small class="dev-credit uppercase">Website designed and built by <a class="underline" href="https://tessthomas.com/" target="_blank">Tess Thomas</a></small>
-    <small class="uppercase">Copyright &copy; Dain's Place {currentYear}</small>
+    <Navigation class="nav" variant={'secondary'} isHome={isHome} />
+    <div class="social-media-container">
+      <a href="https://www.instagram.com/dains_place/" target="_blank" aria-label="instagram">
+        <svg class="icon icon--white instagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><circle cx="128" cy="128" r="40" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="16"/><rect x="32" y="32" width="192" height="192" rx="48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><circle cx="180" cy="76" r="12" fill="currentColor"/></svg>
+      </a>
+      <a href="https://www.facebook.com/dainsplacedurham/" target="_blank" aria-label="facebook">
+        <svg class="icon icon-white facebook" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><circle cx="128" cy="128" r="96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><path d="M168,88H152a24,24,0,0,0-24,24V224" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="96" y1="144" x2="160" y2="144" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+      </a>
+    </div>
+    <div class="copyright-container">
+      <small class="dev-credit uppercase">Website designed and built by <a class="underline" href="https://tessthomas.com/" target="_blank" data-text="Tess Thomas">Tess Thomas</a></small>
+      <small class="uppercase">Copyright &copy; Dain's Place {currentYear}</small>
+    </div>
   </div>
 </footer>

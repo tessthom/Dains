@@ -10,7 +10,7 @@ import tot1 from '../assets/tot-1.webp';
 import tot2 from '../assets/tot-2.webp';
 import tot3 from '../assets/tot-3.webp';
 import tot4 from '../assets/tot-4.webp';
-import leftPanel from '../assets/burg-fries-left.jpeg';
+import leftPanel from '../assets/burg-fries-bright.jpg';
 import rightPanel from '../assets/hotdog-tots-cropped.jpeg';
 import foodFeature from '../assets/mozzarella-triangles-with-twinkles-cropped.jpg';
 
@@ -217,10 +217,11 @@ const pageData = siteData.seo.home; // pull page-specific SEO data to pass into 
 		font-size: clamp(1.5rem, 0.942rem + 1.5vw, 2.5rem);
 		transform: rotate(-4deg);
 		text-wrap: nowrap;
+		margin-block: var(--space-sm);
 	}
 
 	.about .body-text {
-		max-inline-size: 95%;
+		max-inline-size: 85%;
 		font-weight: var(--font-weight-3);
 	}
 
@@ -254,6 +255,7 @@ const pageData = siteData.seo.home; // pull page-specific SEO data to pass into 
 		}
 		.about .drop-border {
 			flex-grow: 1;
+			padding-block: var(--space-md);
 		}
 		.about .body-text {
 			max-inline-size: 90%;
@@ -330,18 +332,22 @@ const pageData = siteData.seo.home; // pull page-specific SEO data to pass into 
 		}
 		.panel-left img, .panel-right img {
 			height: 100%;
-			width: auto;
+			/* width: auto; */
 			object-fit: cover;
+		}
+		.panel-left img {
+			object-position:left;
 		}
 	}
 
 	@media (min-width: 1000px) {
 		.hero {
 			padding-inline: var(--space-sm);
-			/* gap: var(--space-md); */
 		}
 		.dainer-wrapper {
 			gap: 1em;
+			max-width: var(--max-content-width);
+			padding-inline: var(--space-sm);
 		}
 		.dainer {
 			width: auto;
@@ -349,6 +355,19 @@ const pageData = siteData.seo.home; // pull page-specific SEO data to pass into 
 		}
 		.dainer.desktop {
 			display: block;
+		}
+		.address-section-wrapper {
+			/* min-width: 100vw; */
+			margin-inline: auto;
+			border: none;
+			gap: var(--space-md);
+		}
+		.hours-section {
+			max-width: var(--max-content-width);
+			margin-inline: auto;
+			border: 3px solid var(--red);
+			margin-block-end: var(--space-lg);
+			/* background-color: var(--white); */
 		}
 	}
 </style>
@@ -412,7 +431,7 @@ const pageData = siteData.seo.home; // pull page-specific SEO data to pass into 
 			<div class="drop-border drop-border--white">
 				<Image class="detail-logo" src={dainsFullLogo} alt="Full detail Dain's Place logo in the style of stained glass with Old English lettering." />
 				<h3 class="uppercase cursive">A Durham Institution</h3>
-				<p class="body-text">Beloved by locals, students, Eagle's fans  and just about anybody with a penchant for potatoes, Dain's has been slinging juicy burgers and toasty tater tots since 2013. Come cozy up to the bar and make a new friend, or bring your own. Blah blah and more text here. Lorem ipsum flipsum bipsum and a sea shells by the sea shore. Rich white Reese Witherspoon - try saying that 5 times fast!</p>
+				<p class="body-text">Beloved by locals, students, Eagle's fans and just about anybody with a penchant for potatoes, Dain's has been slinging Durham's best burgers, toasty tater tots, ice cold drinks and more since 2007. Come cozy up to the bar and make a new friend, or bring your own. We'll have the game on, sweet tunes playing, and picklebacks at the ready.</p>
 				<a class="btn btn--solid uppercase cursive cta cta--about" href="/about/">About the bar</a>
 			</div>
 		</section>

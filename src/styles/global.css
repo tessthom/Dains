@@ -13,7 +13,7 @@
   --border: 3px;
   --space-sm: var(--size-fluid-2);
   --space-md: var(--size-fluid-4);
-  --space-lg: var(--size-fluid-8);
+  --space-lg: var(--size-fluid-6);
 }
 
 @media (min-width: 654px) {
