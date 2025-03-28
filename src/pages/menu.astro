@@ -49,18 +49,18 @@ const pageData = siteData.seo.menu;
 	}
 	
 	.availability small {
-		font-size: clamp(.75rem, .85rem + 0.25vw, 1.15rem);
+		font-size: clamp(.75rem, .85rem + 0.25vw, 1rem);
 		line-height: 1.15;
 	}
 
 	@media (min-width: 767px) {
 		/* change main layout to 2 col */
 		.container {
-			padding-block: var(--size-fluid-4);
-			margin-bottom: var(--size-fluid-6);
+			padding-block: var(--space-md);
+			margin-bottom: var(--space-md);
 			display: grid;
 			grid-template-columns: 1fr 1fr;
-			grid-template-columns: minmax(450px, 1fr) 1.25fr;
+			grid-template-columns: minmax(450px, 1fr) 50%;
 			grid-template-rows: auto;
 			gap: var(--size-fluid-3);
 			justify-content: space-between;
@@ -68,6 +68,9 @@ const pageData = siteData.seo.menu;
 			/* max content width for wider screens */
 			max-width: 1400px;
 			margin-inline: auto;
+		}
+		.burger-map-container {
+			max-width: 600px;
 		}
 		.container h2, .btns-wrapper, .hours-details, .availability {
 			grid-column: 2 / 3;
@@ -106,7 +109,8 @@ const pageData = siteData.seo.menu;
 
 	@media (min-width: 1000px) {
 		.container {
-
+			padding-inline: 0;
+			margin-block: var(--space-sm);
 		}
 		.burger-map-container img {
 			/* max-width: 600px; */
@@ -133,7 +137,7 @@ const pageData = siteData.seo.menu;
 		</div>
 
 		<div class="availability">
-			<small>*Availability and prices subject to change, especially with seasonal drinks. Please swing by or give us a call for guaranteed up-to-date menu information.</small>
+			<small>*Availability and prices subject to change, especially for seasonal drinks. Please swing by or give us a call for guaranteed up-to-date menu information.</small>
 		</div>
 	</div>
 </BaseLayout>
