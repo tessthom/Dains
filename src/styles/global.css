@@ -209,11 +209,6 @@ main {
   .btn__hamburger {
     display: none; /* hide hamburger btn */
   }
-
-  /* Prevent Home page's hero text from wrapping */
-  .hero h2 {
-    white-space: nowrap;
-  }
 }
 
 /* Desktop */
