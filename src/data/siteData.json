@@ -24,42 +24,100 @@
     "home": {
       "title": "Home | Dain's Place",
       "description": "Welcome to the best neighborhood bar in Durham! Located on 9th Street, we're serving up fantastic pub fare - from juicy burgers to crispy tater tots to ice cold craft beers and refreshing cocktails. Pull up a stool and make Dain's Place your place!",
-      "keywords": ["pub", "restaurant", "food", "dining", "casual dining", "pub", "neighborhood bar", "Durham", "the triangle", "burgers", "tater tots", "craft beer", "cocktails"],
-      "ogImage": "",
+      "keywords": [
+        "pub",
+        "restaurant",
+        "food",
+        "dining",
+        "casual dining",
+        "pub",
+        "neighborhood bar",
+        "Durham",
+        "the triangle",
+        "burgers",
+        "tater tots",
+        "craft beer",
+        "cocktails"
+      ],
+      "ogImage": "/og/location.jpg",
       "path": "/"
     },
     "about": {
       "title": "About | Dain's Place",
       "description": "Discover the story behind Dain's Place, your favorite neighborhood pub in Durham, NC. From baby Dain's hospitality dreams to becoming a local institution, we’re proud to sling our delicious burgers and frosty brews to Durhamites, Dukies, and visitors with a smile (and a wise crack if we really like ya). Get to know our team and learn about our commitment to quality, comfort, and community.",
-      "keywords": ["about", "best neighborhood bar in Durham", "restaurant history", "Dain", "team", "cheers"],
-      "ogImage": "",
+      "keywords": [
+        "about",
+        "best neighborhood bar in Durham",
+        "restaurant history",
+        "Dain",
+        "team",
+        "cheers"
+      ],
+      "ogImage": "/og/about.jpg",
       "path": "/about"
     },
     "location": {
       "title": "Hours & Location | Dain's Place",
       "description": "Visit Dain’s Place in Durham, NC! Find our location and hours of operation. Whether you’re craving a juicy burger, cold beer, or late-night cocktails, we’re ready to serve you seven days a week. See you soon at the best neighborhood bar in town!",
-      "keywords": ["location of dain's place", "restaurant in Durham North Carolina", "bar near duke", "restaurant near duke", "best bar in durham"],
+      "keywords": [
+        "location of dain's place",
+        "restaurant in Durham North Carolina",
+        "bar near duke",
+        "restaurant near duke",
+        "best bar in durham"
+      ],
       "ogImage": "/og/location.jpg",
       "path": "/location"
     },
     "contact": {
       "title": "Contact | Dain's Place",
       "description": "Get in touch with Dain’s Place! Have a question or comment? Use our simple contact form to send us a message, and we’ll get back to you as soon as possible. We’re always here to help!",
-      "keywords": ["contact Dain's Place", "get in touch", "contact form", "restaurant contact information", "Dain's Place email"],
-      "ogImage": "",
+      "keywords": [
+        "contact Dain's Place",
+        "get in touch",
+        "contact form",
+        "restaurant contact information",
+        "Dain's Place email"
+      ],
+      "ogImage": "/og/contact.jpg",
       "path": "/contact"
     },
     "menu": {
       "title": "Menu | Dain's Place",
       "description": "Voted best burger in Durham year after year, Dain's serves fresh, never frozen, 100% black angus beef, the best cheesesteak you'll find outside of Philly, killer kosher all-beef hotdogs, housemade mozzarella trianges, cheesy perogies, crispy tater tots, golden fries and more. Even our salad is a banger!",
-      "keywords": ["menu", "restaurant menu", "late night", "pub", "casual dining", "food", "drinks", "beer", "cocktails", "non alcoholic", "burger", "tater tots", "cheesesteak", "mozzarella triangles", "perogies", "pickle back", "bourbon"],
-      "ogImage": "",
+      "keywords": [
+        "menu",
+        "restaurant menu",
+        "late night",
+        "pub",
+        "casual dining",
+        "food",
+        "drinks",
+        "beer",
+        "cocktails",
+        "non alcoholic",
+        "burger",
+        "tater tots",
+        "cheesesteak",
+        "mozzarella triangles",
+        "perogies",
+        "pickle back",
+        "bourbon"
+      ],
+      "ogImage": "/og/menu.jpg",
       "path": "/menu"
     },
     "faqs": {
       "title": "FAQs | Dain's Place",
       "description": "Find answers to frequently asked questions at Dain's Place. Learn about our menu, ingredients, private events, and more. Everything you need to know before your visit is right here!",
-      "keywords": ["FAQs", "frequently asked questions", "Dain's menu questions", "restaurant FAQs", "ingredients", "private events"],
+      "keywords": [
+        "FAQs",
+        "frequently asked questions",
+        "Dain's menu questions",
+        "restaurant FAQs",
+        "ingredients",
+        "private events"
+      ],
       "ogImage": "",
       "path": "/faqs"
     }
