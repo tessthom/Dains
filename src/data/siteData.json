@@ -16,7 +16,7 @@
     },
     "bar": {
       "open": "11am",
-      "close": "12pm",
+      "close": "12am",
       "closeLongForm": "midnight"
     }
   },
