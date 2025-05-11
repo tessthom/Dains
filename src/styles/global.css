@@ -86,7 +86,7 @@ h2 {
 .body-text {
   font-family: 'Roboto Condensed Variable', sans-serif;
   font-size: clamp(1rem, 1.026rem + 0.25vw, 1.45rem);
-  line-height: 1.5em;
+  line-height: 1.65em;
 }
 
 .cursive {

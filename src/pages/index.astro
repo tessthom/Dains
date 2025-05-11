@@ -135,7 +135,7 @@ const pageData = siteData.seo.home; // pull page-specific SEO data to pass into 
 		background-size: cover;
 		color: var(--white);
 
-		height: 90vh;
+		min-height: 90vh;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -205,7 +205,7 @@ const pageData = siteData.seo.home; // pull page-specific SEO data to pass into 
 		flex-direction: column;
 		align-items: center;
 		justify-content: space-between;
-		gap: var(--size-fluid-3);
+		gap: var(--size-fluid-4);
 	}
 
 	.detail-logo {
@@ -217,7 +217,7 @@ const pageData = siteData.seo.home; // pull page-specific SEO data to pass into 
 		font-size: clamp(1.5rem, 0.942rem + 1.5vw, 2.5rem);
 		transform: rotate(-4deg);
 		text-wrap: nowrap;
-		margin-block: var(--space-sm);
+		margin-block: calc(var(--space-sm) - .5em);
 	}
 
 	.about .body-text {
@@ -299,7 +299,7 @@ const pageData = siteData.seo.home; // pull page-specific SEO data to pass into 
 			background-color: var(--white);
 			border: none;
 			font-size: 1.5rem;
-			padding: 1.25rem 4.5rem;
+			padding: 1.25rem 4rem;
 		}
 		.tot.mobile {
 			display: none;
@@ -369,6 +369,9 @@ const pageData = siteData.seo.home; // pull page-specific SEO data to pass into 
 			border: 3px solid var(--red);
 			margin-block-end: var(--space-lg);
 			/* background-color: var(--white); */
+		}
+		.about .body-text {
+			max-inline-size: 85%;
 		}
 	}
 </style>
